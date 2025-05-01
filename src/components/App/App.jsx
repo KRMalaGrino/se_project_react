@@ -1,10 +1,14 @@
 import "./App.css";
 import Header from "../Header/Header.jsx";
 
+const handleAddClothesClick = () => {
+  addClothesModalOpen(true);
+};
+
 function App() {
   return (
     <>
-      <Header />
+      <Header onAddClothes={handleAddClothesClick} />
       <Main>
         <WeatherCard />
         <ItemCard />
