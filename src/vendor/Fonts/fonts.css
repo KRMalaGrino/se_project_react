@@ -1,0 +1,14 @@
+@font-face {
+  font-family: "Cabinet Grotesk";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./cabinet-grotesk-webfont/CabinetGrotesk-Medium.woff")
+    format("woff");
+}
+
+@font-face {
+  font-family: "Cabinet Grotesk";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./cabinet-grotesk-webfont/CabinetGrotesk-Bold.woff") format("woff");
+}

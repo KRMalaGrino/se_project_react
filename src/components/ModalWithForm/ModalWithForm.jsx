@@ -2,4 +2,4 @@ const ModalWithForm = () => {
   return <div className="ModalWithForm"></div>;
 };
 
-export default ItemModal;
+export default ModalWithForm;
