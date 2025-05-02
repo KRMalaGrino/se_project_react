@@ -1,5 +1,5 @@
 // WTWR Logo
-import logo from "../../images/react.svg";
+import logo from "../../images/wtwr-logo.png";
 // Current Date
 const getCurrentDate = () =>
   new Date().toLocaleString("default", { month: "long", day: "numeric" });
@@ -14,18 +14,22 @@ const avatar =
 const Header = ({ onAddClothes }) => {
   return (
     <header className="Header">
-      <img className="Header__Logo" src={logo} alt="Logo" />
-      <div className="Header__Date">{getCurrentDate()}</div>
-      <div className="Header__Location">***See Section 5***</div>
-      <button className="Header__Add-Clothes-Btn" onClick={onAddClothes}>
-        + Add Clothes
-      </button>
-      <p className="Header__Username">{userName}</p>
-      <img
-        className="Header__Avatar"
-        src={avatar}
-        alt={`${userName}'s avatar`}
-      />
+      <div className="Header__Wrapper-Left">
+        <img className="Header__Logo" src={logo} alt="Logo" />
+        <div className="Header__Date">{getCurrentDate()}</div>
+        <div className="Header__Location">***See Section 5***</div>
+      </div>
+      <div className="Header__Wrapper-Right">
+        <button className="Header__Add-Clothes-Btn" onClick={onAddClothes}>
+          + Add Clothes
+        </button>
+        <p className="Header__Username">{userName}</p>
+        <img
+          className="Header__Avatar"
+          src={avatar}
+          alt={`${userName}'s avatar`}
+        />
+      </div>
     </header>
   );
 };

@@ -5,14 +5,17 @@
   justify-content: space-between;
 
   font-family: "Cabinet Grotesk", sans-serif;
+  font-style: normal;
   font-weight: 500;
   line-height: 20px;
 }
 
 .Footer__NameText {
   margin: 0;
+  padding: 0;
 }
 
 .Footer__DateText {
   margin: 0;
+  padding: 0;
 }

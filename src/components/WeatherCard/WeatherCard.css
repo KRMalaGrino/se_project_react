@@ -1,5 +1,24 @@
 .WeatherCard {
+  width: 100%;
+  height: 80px;
+
+  background-image: url(../../images/WeatherCard-Background.png);
+  background-color: #00a3ff;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .WeatherCard__CurrentWeather {
+  padding: 20px 16px;
+
+  width: 69px;
+  height: 40px;
+
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-style: normal;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 40px;
+  color: #ffffff;
 }

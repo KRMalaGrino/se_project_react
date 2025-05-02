@@ -5,9 +5,9 @@ const getCurrentWeather = () => {
 const WeatherCard = () => {
   return (
     <div className="WeatherCard">
-      <h2 className="WeatherCard__CurrentWeather">{getCurrentWeather}</h2>
+      <h2 className="WeatherCard__CurrentWeather">{getCurrentWeather}75 F</h2>
     </div>
   );
 };
 
-export { WeatherCard, getCurrentWeather };
+export default WeatherCard;

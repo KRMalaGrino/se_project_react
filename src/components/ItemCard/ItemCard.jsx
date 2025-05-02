@@ -1,5 +1,3 @@
-import { WeatherCard, getCurrentWeather } from "../WeatherCard/WeatherCard.jsx";
-
 const getWhatToWear = () => {
   // What to wear function based on current weather
 };

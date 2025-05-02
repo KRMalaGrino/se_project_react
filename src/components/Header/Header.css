@@ -1,20 +1,79 @@
 .Header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.Header__Wrapper-Left {
+  margin: 0;
+
+  display: flex;
+  flex-direction: row;
 }
 
 .Header__Logo {
+  padding: 0 24px 0 0;
+
+  width: 89px;
+  height: 40px;
 }
 
 .Header__Date {
+  margin: auto;
+
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-style: normal;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
 }
 
 .Header__Location {
+  margin: auto;
+
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-style: normal;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.Header__Wrapper-Right {
+  margin: 0;
+
+  display: flex;
+  flex-direction: row;
 }
 
 .Header__Add-Clothes-Btn {
+  margin: 0 20px 0 0;
+  padding: 0;
+
+  background-color: transparent;
+  border: none;
+
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-style: normal;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
 }
 
 .Header__Username {
+  margin: auto;
+  padding: 0 12px 0 0;
+
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-style: normal;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 100%;
 }
 
 .Header__Avatar {
+  margin: auto;
+
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
 }
