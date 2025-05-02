@@ -1,4 +1,6 @@
 .WeatherCard {
+  margin: 28px 0 40px 0;
+
   width: 100%;
   height: 80px;
 
@@ -10,6 +12,7 @@
 }
 
 .WeatherCard__CurrentWeather {
+  margin: 0;
   padding: 20px 16px;
 
   width: 69px;
