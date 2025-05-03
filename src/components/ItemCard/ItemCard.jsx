@@ -2,6 +2,8 @@ const getWhatToWear = () => {
   // What to wear function based on current weather
 };
 
+const handleCardClick = () => {};
+
 const ItemCard = () => {
   return (
     <div className="ItemCard">
