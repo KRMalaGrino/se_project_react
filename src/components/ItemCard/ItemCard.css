@@ -32,23 +32,37 @@
 .Item {
   width: 325px;
   height: 328px;
-  border-radius: 25%;
+
+  position: relative;
 }
 
 .Item__Image {
   width: 325px;
   height: 328px;
-  border-radius: 25%;
+  border: 1px solid rgb(152, 152, 152);
+  border-radius: 10px;
 }
 
 .Item__Text {
-  margin: 15px 126px 287px 125px;
+  margin: 0;
   padding: 2px 12px;
+
+  width: 73px;
+  height: 24px;
+  z-index: 1;
+
+  position: absolute;
+  top: 15px;
+  right: 115px;
 
   font-family: "Cabinet Grotesk", sans-serif;
   font-style: normal;
   font-size: 16px;
   font-weight: 700;
   line-height: 20px;
+  text-align: center;
   color: #000000;
+
+  background-color: white;
+  border-radius: 7px;
 }

@@ -10,36 +10,44 @@ const ItemCard = () => {
       </p>
       <ul className="ItemCards">
         <li className="Item">
-          <img className="Item__Image" src="" alt="" />
-          <p className="Item__Text"></p>
+          <img
+            className="Item__Image"
+            src="https://coach.scene7.com/is/image/Coach/cu383_blk_a0?$desktopProduct$"
+            alt=""
+          />
+          <p className="Item__Text">Shirt</p>
+        </li>
+        <li className="Item">
+          <img
+            className="Item__Image"
+            src="https://joesusa.com/cdn/shop/files/25968_f_fm.jpg?v=1739774847&width=1200"
+            alt=""
+          />
+          <p className="Item__Text">Shirt</p>
         </li>
         <li className="Item">
           <img className="Item__Image" src="" alt="" />
-          <p className="Item__Text"></p>
+          <p className="Item__Text">Shirt</p>
         </li>
         <li className="Item">
           <img className="Item__Image" src="" alt="" />
-          <p className="Item__Text"></p>
+          <p className="Item__Text">Shirt</p>
         </li>
         <li className="Item">
           <img className="Item__Image" src="" alt="" />
-          <p className="Item__Text"></p>
+          <p className="Item__Text">Shirt</p>
         </li>
         <li className="Item">
           <img className="Item__Image" src="" alt="" />
-          <p className="Item__Text"></p>
+          <p className="Item__Text">Shirt</p>
         </li>
         <li className="Item">
           <img className="Item__Image" src="" alt="" />
-          <p className="Item__Text"></p>
+          <p className="Item__Text">Shirt</p>
         </li>
         <li className="Item">
           <img className="Item__Image" src="" alt="" />
-          <p className="Item__Text"></p>
-        </li>
-        <li className="Item">
-          <img className="Item__Image" src="" alt="" />
-          <p className="Item__Text"></p>
+          <p className="Item__Text">Shirt</p>
         </li>
       </ul>
     </div>
