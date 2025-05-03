@@ -24,8 +24,8 @@ const ModalWithForm = () => {
           </label>
         </div>
         <button className="ModalWithForm__Btn-AddGarment">Add garment</button>
-        <button className="ModalWithForm__Btn-Close"></button>
       </form>
+      <button className="ModalWithForm__Btn-Close"></button>
     </div>
   );
 };
