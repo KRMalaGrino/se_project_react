@@ -1,6 +1,6 @@
 const ModalWithForm = () => {
   return (
-    <div className="ModalWithForm">
+    <div className={`modal modal_type_${name}`}>
       <form className="ModalWithForm__Form">
         <h2 className="ModalWithForm__Title">New garment</h2>
         <label className="ModalWithForm__Label">

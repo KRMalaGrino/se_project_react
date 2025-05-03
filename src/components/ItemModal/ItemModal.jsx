@@ -1,6 +1,8 @@
+const onClose = () => {};
+
 const ItemModal = () => {
   return (
-    <div className="ItemModal">
+    <div className={`Modal Modal_Type_${name}`}>
       <img className="ItemModal__Image" />
       <div className="ItemModal__TextWrapper"></div>
       <h2 className="ItemModal__Title"></h2>
