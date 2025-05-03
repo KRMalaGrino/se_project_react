@@ -1,17 +1,54 @@
 .ItemCard {
+  margin: 0;
+
+  width: 100%;
 }
 
 .ItemCard__CurrentTemp {
+  margin: 0;
+  width: 343px;
+  height: 25px;
+
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-style: normal;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 100%;
+  color: #000000;
 }
 
 .ItemCards {
+  margin: 34px 0 0;
+  padding: 0;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(325px, 328px));
+  justify-content: space-around;
+  gap: 20px;
+
+  list-style-type: none;
 }
 
 .Item {
+  width: 325px;
+  height: 328px;
+  border-radius: 25%;
 }
 
 .Item__Image {
+  width: 325px;
+  height: 328px;
+  border-radius: 25%;
 }
 
 .Item__Text {
+  margin: 15px 126px 287px 125px;
+  padding: 2px 12px;
+
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-style: normal;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  color: #000000;
 }

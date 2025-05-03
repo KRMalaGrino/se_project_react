@@ -8,13 +8,39 @@ const ItemCard = () => {
       <p className="ItemCard__CurrentTemp">
         Today is `${getWhatToWear}` F / You may want to wear:
       </p>
-      <ul className="Items">
-        <template id="Item-Template">
-          <li className="Item">
-            <img className="Item__Image" src="" alt="" />
-            <p className="Item__Text"></p>
-          </li>
-        </template>
+      <ul className="ItemCards">
+        <li className="Item">
+          <img className="Item__Image" src="" alt="" />
+          <p className="Item__Text"></p>
+        </li>
+        <li className="Item">
+          <img className="Item__Image" src="" alt="" />
+          <p className="Item__Text"></p>
+        </li>
+        <li className="Item">
+          <img className="Item__Image" src="" alt="" />
+          <p className="Item__Text"></p>
+        </li>
+        <li className="Item">
+          <img className="Item__Image" src="" alt="" />
+          <p className="Item__Text"></p>
+        </li>
+        <li className="Item">
+          <img className="Item__Image" src="" alt="" />
+          <p className="Item__Text"></p>
+        </li>
+        <li className="Item">
+          <img className="Item__Image" src="" alt="" />
+          <p className="Item__Text"></p>
+        </li>
+        <li className="Item">
+          <img className="Item__Image" src="" alt="" />
+          <p className="Item__Text"></p>
+        </li>
+        <li className="Item">
+          <img className="Item__Image" src="" alt="" />
+          <p className="Item__Text"></p>
+        </li>
       </ul>
     </div>
   );
