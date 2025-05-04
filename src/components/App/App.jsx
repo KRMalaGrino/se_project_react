@@ -1,6 +1,5 @@
 import Header from "../Header/Header.jsx";
-import WeatherCard from "../WeatherCard/WeatherCard.jsx";
-import ItemCard from "../ItemCard/ItemCard.jsx";
+import Main from "../Main/Main.jsx";
 import Footer from "../Footer/Footer.jsx";
 import ModalWithForm from "../ModalWithForm/ModalWithForm.jsx";
 import ItemModal from "../ItemModal/ItemModal.jsx";
@@ -12,13 +11,10 @@ const handleAddClothesClick = () => {
 function App() {
   return (
     <>
-      <div className="App">
-        <div className="App__Content">
+      <div className="app">
+        <div className="app__content">
           <Header onAddClothes={handleAddClothesClick} />
-          <main>
-            <WeatherCard />
-            <ItemCard />
-          </main>
+          <Main />
           <Footer />
           <ModalWithForm />
           <ItemModal />

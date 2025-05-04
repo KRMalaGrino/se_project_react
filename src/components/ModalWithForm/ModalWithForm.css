@@ -1,11 +1,11 @@
-.Modal {
+.modal {
 }
 
-.Modal_Type_ModalWithForm {
+.modal_type_modal-with-form {
 }
 
-.ModalWithForm {
-  visibility: hidden;
+.modal-with-form {
+  /* visibility: hidden; */
   /* opacity: 0; */
   /* transition: visibility 0.5s linear, opacity 0.25s linear; */
 
@@ -22,7 +22,7 @@
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.ModalWithForm__Container {
+.modal-with-form__container {
   margin: 0 auto;
   padding: 28px 28px 36px;
   z-index: 1;
@@ -35,22 +35,22 @@
   width: 100%;
   max-width: 498px;
   background-color: white;
-}
-
-.ModalWithForm__Form {
-  display: flex;
-  flex-direction: column;
-}
-
-.ModalWithForm__Title {
-  margin: 0;
 
   font-family: Cabinet Grotesk;
   font-size: 16px;
   line-height: 20px;
 }
 
-.ModalWithForm__Label-Text {
+.modal-with-form__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-with-form__title {
+  margin: 0;
+}
+
+.modal-with-form__label-text {
   margin: 24px 0 0;
 
   width: 100%;
@@ -61,42 +61,49 @@
   flex-direction: column;
 }
 
-.ModalWithForm__Input {
+.modal-with-form__input-text {
   margin: 0;
+  padding: 0;
+
+  border: none;
+  border-bottom: 1px solid #000000;
 }
 
-.ModalWithForm__RadioBtn-Wrapper {
+.modal-with-form__input-radio {
+  margin: 0 8px 0 0;
+}
+
+.modal-with-form__radio-btn-wrapper {
   display: flex;
   flex-direction: column;
 
   max-width: 173px;
 }
 
-.ModalWithForm__RadioBtn-Title {
+.modal-with-form__radio-btn-title {
   margin: 24px 0 12px;
-
-  font-family: Cabinet Grotesk;
-  font-size: 16px;
-  line-height: 20px;
 }
 
-.ModalWithForm__Label-Radio {
+.modal-with-form__label-radio {
   margin: 0 0 8px;
 }
 
-.ModalWithForm__Btn-AddGarment {
+.modal-with-form__btn-add-garment {
   margin: 24px 0 0;
   padding: 8px 16px;
 
   width: 124px;
   height: 36px;
+  border: none;
+  border-radius: 8px;
 
-  font-family: "Cabinet Grotesk", sans-serif;
+  background-color: #000000;
+
   font-size: 15px;
-  line-height: 20px;
+  color: #ffffff;
 }
 
-.ModalWithForm__Btn-Close {
+.modal-with-form__btn-close {
   display: flex;
   flex-direction: column;
   justify-content: center;

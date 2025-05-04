@@ -2,18 +2,18 @@ const onClose = () => {};
 
 const ItemModal = () => {
   return (
-    <div className="ItemModal">
-      <div className="ItemModal__Container">
+    <div className="item-modal">
+      <div className="item-modal__container">
         <img
-          className="ItemModal__Image"
+          className="item-modal__image"
           src="https://coach.scene7.com/is/image/Coach/cu383_blk_a0?$desktopProductZoom$"
           alt="Shirt"
         />
-        <div className="ItemModal__TextWrapper">
-          <p className="ItemModal__Title">Shirt</p>
-          <p className="ItemModal__Description">Weather: Hot</p>
+        <div className="item-modal__text-wrapper">
+          <p className="item-modal__title">Shirt</p>
+          <p className="item-modal__description">Weather: Hot</p>
         </div>
-        <button className="ItemModal__Btn-Close"></button>
+        <button className="item-modal__btn-close"></button>
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-.WeatherCard {
+.weather-card {
   margin: 28px 0 40px 0;
 
   width: 100%;
@@ -12,7 +12,7 @@
   background-size: contain;
 }
 
-.WeatherCard__CurrentWeather {
+.weather-card__temp {
   margin: 0;
   padding: 20px 16px;
 

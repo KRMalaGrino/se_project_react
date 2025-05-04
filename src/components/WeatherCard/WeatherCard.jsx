@@ -4,9 +4,9 @@ const getCurrentWeather = () => {
 
 const WeatherCard = () => {
   return (
-    <div className="WeatherCard">
-      <h2 className="WeatherCard__CurrentWeather">{getCurrentWeather}75 F</h2>
-    </div>
+    <section className="weather-card">
+      <h2 className="weather-card__temp">{getCurrentWeather}75 F</h2>
+    </section>
   );
 };
 

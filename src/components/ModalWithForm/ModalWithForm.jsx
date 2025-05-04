@@ -1,14 +1,14 @@
 const ModalWithForm = () => {
   return (
-    <div className="ModalWithForm">
-      <div className="ModalWithForm__Container">
-        <form className="ModalWithForm__Form">
-          <h2 className="ModalWithForm__Title">New garment</h2>
-          <label className="ModalWithForm__Label-Text" htmlFor="Name">
+    <div className="modal-with-form">
+      <div className="modal-with-form__container">
+        <form className="modal-with-form__form">
+          <p className="modal-with-form__title">New garment</p>
+          <label className="modal-with-form__label-text" htmlFor="Name">
             {" "}
             Name
             <input
-              className="ModalWithForm__Input"
+              className="modal-with-form__input-text"
               type="text"
               id="Name"
               name="Name"
@@ -18,11 +18,11 @@ const ModalWithForm = () => {
               required
             />
           </label>
-          <label className="ModalWithForm__Label-Text" htmlFor="Image-Url">
+          <label className="modal-with-form__label-text" htmlFor="Image-Url">
             {" "}
             Image
             <input
-              className="ModalWithForm__Input"
+              className="modal-with-form__input-text"
               type="url"
               id="Image-Url"
               name="Image-Url"
@@ -30,31 +30,37 @@ const ModalWithForm = () => {
               required
             />
           </label>
-          <div className="ModalWithForm__RadioBtn-Wrapper">
-            <h2 className="ModalWithForm__RadioBtn-Title">
+          <div className="modal-with-form__radio-btn-wrapper">
+            <p className="modal-with-form__radio-btn-title">
               Select the weather type:
-            </h2>
-            <label className="ModalWithForm__Label-Radio" htmlFor="radio-hot">
+            </p>
+            <label className="modal-with-form__label-radio" htmlFor="radio-hot">
               <input
-                className="ModalWithForm__Input"
+                className="modal-with-form__input-radio"
                 type="radio"
                 id="radio-hot"
                 name="radio-hot"
               />
               Hot
             </label>
-            <label className="ModalWithForm__Label-Radio" htmlFor="radio-warm">
+            <label
+              className="modal-with-form__label-radio"
+              htmlFor="radio-warm"
+            >
               <input
-                className="ModalWithForm__Input"
+                className="modal-with-form__input-radio"
                 type="radio"
                 id="radio-warm"
                 name="radio-warm"
               />
               Warm
             </label>
-            <label className="ModalWithForm__Label-Radio" htmlFor="radio-cold">
+            <label
+              className="modal-with-form__label-radio"
+              htmlFor="radio-cold"
+            >
               <input
-                className="ModalWithForm__Input"
+                className="modal-with-form__input-radio"
                 type="radio"
                 id="radio-cold"
                 name="radio-cold"
@@ -62,9 +68,11 @@ const ModalWithForm = () => {
               Cold
             </label>
           </div>
-          <button className="ModalWithForm__Btn-AddGarment">Add garment</button>
+          <button className="modal-with-form__btn-add-garment">
+            Add garment
+          </button>
         </form>
-        <button className="ModalWithForm__Btn-Close"></button>
+        <button className="modal-with-form__btn-close"></button>
       </div>
     </div>
   );

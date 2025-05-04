@@ -1,23 +1,7 @@
-.ItemCard {
-  margin: 0;
-
-  width: 100%;
+.item-card {
 }
 
-.ItemCard__CurrentTemp {
-  margin: 0;
-  width: 343px;
-  height: 25px;
-
-  font-family: "Cabinet Grotesk", sans-serif;
-  font-style: normal;
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 100%;
-  color: #000000;
-}
-
-.ItemCards {
+.item-cards {
   margin: 34px 0 0;
   padding: 0;
 
@@ -29,21 +13,21 @@
   list-style-type: none;
 }
 
-.Item {
+.item {
   width: 325px;
   height: 328px;
 
   position: relative;
 }
 
-.Item__Image {
+.item__image {
   width: 325px;
   height: 328px;
   border: 1px solid rgb(152, 152, 152);
   border-radius: 10px;
 }
 
-.Item__Text {
+.item__text {
   margin: 0;
   padding: 2px 12px;
 
