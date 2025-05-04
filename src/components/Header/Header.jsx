@@ -1,31 +1,31 @@
-// WTWR Logo
-import logo from "../../images/wtwr-logo.png";
+import logo from "../../images/wtwr-logo.png"; // WTWR logo
+import avatar from "../../images/avatar.jpg"; // Avatar
+
+const userName = "Ryan Joseph Malagrino"; // UserName
+
 // Current Date
 const getCurrentDate = () =>
   new Date().toLocaleString("default", { month: "long", day: "numeric" });
 // Current Location
-// ---------------- See section 5 ----------------
-// User Name & Avatar
-const userName = "Ryan Joseph Malagrino";
-const avatar =
-  "https://i.ytimg.com/vi/zbF3SsoTUvA/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLC8cp5-bDhUMAEv7i6tBacv9Qp5VQ";
-// Add Clothes Button
-// Header return
+const getCurrentLocation = () => {}; // ----- See section 5 -----
+
+// Add Clothes Button & Header return
 const Header = ({ onAddClothes }) => {
   return (
-    <header className="Header">
-      <div className="Header__Wrapper-Left">
-        <img className="Header__Logo" src={logo} alt="Logo" />
-        <div className="Header__Date">{getCurrentDate()}</div>
-        <div className="Header__Location">***See Section 5***</div>
+    <header className="header">
+      <div className="header__wrapper-left">
+        <img className="header__logo" src={logo} alt="logo" />
+        <p className="header__date-and-location">
+          {getCurrentDate()} {getCurrentLocation()} ***See Section 5***
+        </p>
       </div>
-      <div className="Header__Wrapper-Right">
-        <button className="Header__Add-Clothes-Btn" onClick={onAddClothes}>
+      <div className="header__wrapper-right">
+        <button className="header__add-clothes-btn" onClick={onAddClothes}>
           + Add Clothes
         </button>
-        <p className="Header__Username">{userName}</p>
+        <p className="header__username">{userName}</p>
         <img
-          className="Header__Avatar"
+          className="header__avatar"
           src={avatar}
           alt={`${userName}'s avatar`}
         />

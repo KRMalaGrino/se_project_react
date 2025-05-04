@@ -13,14 +13,16 @@ function App() {
   return (
     <>
       <div className="App">
-        <Header onAddClothes={handleAddClothesClick} />
-        <main>
-          <WeatherCard />
-          <ItemCard />
-        </main>
-        <Footer />
-        <ModalWithForm />
-        <ItemModal />
+        <div className="App__Content">
+          <Header onAddClothes={handleAddClothesClick} />
+          <main>
+            <WeatherCard />
+            <ItemCard />
+          </main>
+          <Footer />
+          <ModalWithForm />
+          <ItemModal />
+        </div>
       </div>
     </>
   );
