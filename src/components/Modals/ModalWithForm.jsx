@@ -26,7 +26,7 @@ const ModalWithForm = () => {
               type="url"
               id="Image-Url"
               name="Image-Url"
-              placeholder="Image Url"
+              placeholder="Image URL"
               required
             />
           </label>
