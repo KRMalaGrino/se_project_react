@@ -1,13 +1,9 @@
+/* ------------------------ Global Modal ---------------------- */
+
 .modal {
-}
-
-.modal_type_modal-with-form {
-}
-
-.modal-with-form {
   visibility: hidden;
-  /* opacity: 0; */
-  /* transition: visibility 0.5s linear, opacity 0.25s linear; */
+  opacity: 0;
+  transition: visibility 0.5s linear, opacity 0.25s linear;
 
   display: flex;
   justify-content: center;
@@ -22,7 +18,12 @@
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.modal-with-form__container {
+.modal_opened {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal__container {
   margin: 0 auto;
   padding: 28px 28px 36px;
   z-index: 1;
@@ -39,6 +40,33 @@
   font-family: Cabinet Grotesk;
   font-size: 16px;
   line-height: 20px;
+}
+
+.modal__close-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  position: absolute;
+  top: 26px;
+  right: 26px;
+  padding: 0;
+
+  object-fit: cover;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  background-image: url(../../images/Close-Icon.svg);
+  border: none;
+  opacity: 0.7;
+
+  cursor: pointer;
+  transition: opacity 0.25s linear;
+}
+
+/* ------------------------ Add Clothes Modal ---------------------- */
+
+.modal_type_add-clothes {
 }
 
 .modal-with-form__form {
@@ -103,25 +131,45 @@
   color: #ffffff;
 }
 
-.modal-with-form__btn-close {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  position: absolute;
+.modal__close-btn_type_add-clothes {
   top: 20px;
   right: 28px;
-  padding: 0;
 
-  object-fit: cover;
   width: 20px;
   height: 20px;
-  background-color: transparent;
   background-image: url(../../images/Close-Icon-Gray.png);
   background-repeat: no-repeat;
-  border: none;
-  opacity: 0.7;
+}
 
-  cursor: pointer;
-  transition: opacity 0.25s linear;
+/* ------------------------ Item Modal ---------------------- */
+
+.modal_type_item {
+}
+
+.modal__container_type_item {
+  padding: 0;
+}
+
+.item-modal__image {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.item-modal__text-wrapper {
+  padding: 20px 32px 32px;
+
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.item-modal__title {
+  margin: 0 0 12px;
+}
+
+.item-modal__description {
+  margin: 0;
 }

@@ -1,7 +1,7 @@
 const ModalWithForm = () => {
   return (
-    <div className="modal-with-form">
-      <div className="modal-with-form__container">
+    <div className="modal modal_type_add-clothes">
+      <div className="modal__container">
         <form className="modal-with-form__form">
           <p className="modal-with-form__title">New garment</p>
           <label className="modal-with-form__label-text" htmlFor="Name">
@@ -72,7 +72,7 @@ const ModalWithForm = () => {
             Add garment
           </button>
         </form>
-        <button className="modal-with-form__btn-close"></button>
+        <button className="modal__close-btn modal__close-btn_type_add-clothes"></button>
       </div>
     </div>
   );
