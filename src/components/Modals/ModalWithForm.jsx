@@ -1,14 +1,14 @@
 const ModalWithForm = () => {
   return (
-    <div className="modal modal_type_add-clothes">
+    <div className="modal">
       <div className="modal__container">
-        <form className="modal-with-form__form">
-          <p className="modal-with-form__title">New garment</p>
-          <label className="modal-with-form__label-text" htmlFor="Name">
+        <form className="modal__form">
+          <p className="modal__title">New garment</p>
+          <label className="modal__label" htmlFor="Name">
             {" "}
             Name
             <input
-              className="modal-with-form__input-text"
+              className="modal__input"
               type="text"
               id="Name"
               name="Name"
@@ -18,11 +18,11 @@ const ModalWithForm = () => {
               required
             />
           </label>
-          <label className="modal-with-form__label-text" htmlFor="Image-Url">
+          <label className="modal__label" htmlFor="Image-Url">
             {" "}
             Image
             <input
-              className="modal-with-form__input-text"
+              className="modal__input"
               type="url"
               id="Image-Url"
               name="Image-Url"
@@ -30,47 +30,37 @@ const ModalWithForm = () => {
               required
             />
           </label>
-          <div className="modal-with-form__radio-btn-wrapper">
-            <p className="modal-with-form__radio-btn-title">
-              Select the weather type:
-            </p>
-            <label className="modal-with-form__label-radio" htmlFor="radio-hot">
+          <fieldset className="modal__fieldset">
+            <legend className="modal__legend">Select the weather type:</legend>
+            <label className="modal__radio-label" htmlFor="radio-hot">
               <input
-                className="modal-with-form__input-radio"
+                className="modal__radio-input"
                 type="radio"
                 id="radio-hot"
                 name="radio-hot"
               />
               Hot
             </label>
-            <label
-              className="modal-with-form__label-radio"
-              htmlFor="radio-warm"
-            >
+            <label className="modal__radio-label" htmlFor="radio-warm">
               <input
-                className="modal-with-form__input-radio"
+                className="modal__radio-input"
                 type="radio"
                 id="radio-warm"
                 name="radio-warm"
               />
               Warm
             </label>
-            <label
-              className="modal-with-form__label-radio"
-              htmlFor="radio-cold"
-            >
+            <label className="modal__radio-label" htmlFor="radio-cold">
               <input
-                className="modal-with-form__input-radio"
+                className="modal__radio-input"
                 type="radio"
                 id="radio-cold"
                 name="radio-cold"
               />
               Cold
             </label>
-          </div>
-          <button className="modal-with-form__btn-add-garment">
-            Add garment
-          </button>
+          </fieldset>
+          <button className="modal__add-garment-btn">Add garment</button>
         </form>
         <button className="modal__close-btn modal__close-btn_type_add-clothes"></button>
       </div>

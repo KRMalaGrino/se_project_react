@@ -1,5 +1,3 @@
-/* ------------------------ Global Modal ---------------------- */
-
 .modal {
   visibility: hidden;
   opacity: 0;
@@ -42,6 +40,96 @@
   line-height: 20px;
 }
 
+.modal__container_type_item {
+  padding: 0;
+}
+
+.modal__image {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal__text-wrapper {
+  padding: 20px 32px 32px;
+
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.modal__title {
+  margin: 0;
+}
+
+.modal__title_type_item {
+  margin: 0 0 12px;
+}
+
+.modal__fieldset {
+  display: flex;
+  flex-direction: column;
+
+  max-width: 173px;
+}
+
+.modal__legend {
+  margin: 24px 0 12px;
+}
+
+.modal__label {
+  margin: 24px 0 0;
+
+  width: 100%;
+  height: 100%;
+  gap: 8px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.modal__radio-label {
+  margin: 0 0 8px;
+}
+
+.modal__input {
+  margin: 0;
+  padding: 0;
+
+  border: none;
+  border-bottom: 1px solid #000000;
+}
+
+.modal__radio-input {
+  margin: 0 8px 0 0;
+}
+
+.modal__description {
+  margin: 0;
+}
+
+.modal__add-garment-btn {
+  margin: 24px 0 0;
+  padding: 8px 16px;
+
+  width: 124px;
+  height: 36px;
+  border: none;
+  border-radius: 8px;
+
+  background-color: #000000;
+
+  font-size: 15px;
+  color: #ffffff;
+}
+
 .modal__close-btn {
   display: flex;
   flex-direction: column;
@@ -64,73 +152,6 @@
   transition: opacity 0.25s linear;
 }
 
-/* ------------------------ Add Clothes Modal ---------------------- */
-
-.modal_type_add-clothes {
-}
-
-.modal-with-form__form {
-  display: flex;
-  flex-direction: column;
-}
-
-.modal-with-form__title {
-  margin: 0;
-}
-
-.modal-with-form__label-text {
-  margin: 24px 0 0;
-
-  width: 100%;
-  height: 100%;
-  gap: 8px;
-
-  display: flex;
-  flex-direction: column;
-}
-
-.modal-with-form__input-text {
-  margin: 0;
-  padding: 0;
-
-  border: none;
-  border-bottom: 1px solid #000000;
-}
-
-.modal-with-form__input-radio {
-  margin: 0 8px 0 0;
-}
-
-.modal-with-form__radio-btn-wrapper {
-  display: flex;
-  flex-direction: column;
-
-  max-width: 173px;
-}
-
-.modal-with-form__radio-btn-title {
-  margin: 24px 0 12px;
-}
-
-.modal-with-form__label-radio {
-  margin: 0 0 8px;
-}
-
-.modal-with-form__btn-add-garment {
-  margin: 24px 0 0;
-  padding: 8px 16px;
-
-  width: 124px;
-  height: 36px;
-  border: none;
-  border-radius: 8px;
-
-  background-color: #000000;
-
-  font-size: 15px;
-  color: #ffffff;
-}
-
 .modal__close-btn_type_add-clothes {
   top: 20px;
   right: 28px;
@@ -139,37 +160,4 @@
   height: 20px;
   background-image: url(../../images/Close-Icon-Gray.png);
   background-repeat: no-repeat;
-}
-
-/* ------------------------ Item Modal ---------------------- */
-
-.modal_type_item {
-}
-
-.modal__container_type_item {
-  padding: 0;
-}
-
-.item-modal__image {
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
-}
-
-.item-modal__text-wrapper {
-  padding: 20px 32px 32px;
-
-  font-family: "Cabinet Grotesk", sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 24px;
-}
-
-.item-modal__title {
-  margin: 0 0 12px;
-}
-
-.item-modal__description {
-  margin: 0;
 }
