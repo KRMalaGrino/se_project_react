@@ -10,7 +10,7 @@ const getCurrentDate = () =>
 const getCurrentLocation = () => {}; // ----- See section 5 -----
 
 // Add Clothes Button & Header return
-const Header = ({ onAddClothes }) => {
+const Header = ({ onAddClick }) => {
   return (
     <header className="header">
       <div className="header__wrapper-left">
@@ -20,7 +20,11 @@ const Header = ({ onAddClothes }) => {
         </p>
       </div>
       <div className="header__wrapper-right">
-        <button className="header__add-clothes-btn" onClick={onAddClothes}>
+        <button
+          onClick={onAddClick}
+          type="button"
+          className="header__add-clothes-btn"
+        >
           + Add Clothes
         </button>
         <p className="header__username">{userName}</p>

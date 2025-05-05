@@ -1,6 +1,6 @@
 const onClose = () => {};
 
-const ItemModal = () => {
+const ItemModal = (handleCloseClick) => {
   return (
     <div className="modal">
       <div className="modal__container modal__container_type_item">
@@ -13,7 +13,11 @@ const ItemModal = () => {
           <p className="modal__title_type_item">Shirt</p>
           <p className="modal__description">Weather: Hot</p>
         </div>
-        <button className="modal__close-btn"></button>
+        <button
+          onClick={handleCloseClick}
+          type="button"
+          className="modal__close-btn"
+        ></button>
       </div>
     </div>
   );
