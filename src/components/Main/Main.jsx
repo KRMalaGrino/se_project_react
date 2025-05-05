@@ -1,11 +1,18 @@
 import WeatherCard from "../WeatherCard/WeatherCard.jsx";
 import ItemCard from "../ItemCard/ItemCard.jsx";
+import { defaultClothingItems } from "../../utils/constants.js";
 
 const getWhatToWear = () => {
   // What to wear function based on current weather
 };
 
-const Main = () => {
+// figure the4 logic for filtering cards and returning it in the component
+const Main = ({ weather }) => {
+  // const { weatherType } = weather;
+  // const filteredCards = createReadStream.filter(
+  //   (card) => card.weather === weatherType
+  // );
+
   return (
     <main className="main">
       <WeatherCard />
@@ -13,6 +20,16 @@ const Main = () => {
         <p className="cards__text">
           Today is `${getWhatToWear}` F / You may want to wear:
         </p>
+        <ul className="cards__list">
+          {defaultClothingItems.map((item) => {
+            return (
+              <div key={item._id}>
+                <h2>{item.name}</h2>
+                <img src={item.link} alt={item.name} />
+              </div>
+            );
+          })}
+        </ul>
         <ItemCard />
       </section>
     </main>

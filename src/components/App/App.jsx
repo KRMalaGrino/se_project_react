@@ -4,11 +4,21 @@ import Footer from "../Footer/Footer.jsx";
 import ModalWithForm from "../ModalWithForm/ModalWithForm.jsx";
 import ItemModal from "../ItemModal/ItemModal.jsx";
 
+// import fetchWeatherData from "../../utils/weatherApi.js";
+
+// Handle logic for handling Add Clothes Click
 const handleAddClothesClick = () => {
   addClothesModalOpen(true);
 };
 
+// Handle logic for getting the weather data
 function App() {
+  // const [weather, setWeather] = useState(null);
+
+  // useEffect(() => {
+  //   fetchWeatherData().then(setWeather);
+  // });
+
   return (
     <>
       <div className="app">
