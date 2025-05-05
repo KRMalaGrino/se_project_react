@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import Header from "../Header/Header.jsx";
 import Main from "../Main/Main.jsx";
 import Footer from "../Footer/Footer.jsx";
@@ -13,7 +15,7 @@ const handleAddClothesClick = () => {
 
 // Handle logic for getting the weather data
 function App() {
-  // const [weather, setWeather] = useState(null);
+  const [weatherData, setWeatherData] = useState({ type: "cold" });
 
   // useEffect(() => {
   //   fetchWeatherData().then(setWeather);
@@ -24,7 +26,7 @@ function App() {
       <div className="app">
         <div className="app__content">
           <Header onAddClothes={handleAddClothesClick} />
-          <Main />
+          <Main weatherData={weatherData} />
           <Footer />
           <ModalWithForm />
           <ItemModal />

@@ -1,18 +1,18 @@
-.item {
+.card {
   width: 325px;
   height: 328px;
 
   position: relative;
 }
 
-.item__image {
+.card__image {
   width: 325px;
   height: 328px;
   border: 1px solid rgb(152, 152, 152);
   border-radius: 10px;
 }
 
-.item__text {
+.card__text {
   margin: 0;
   padding: 2px 12px;
 
