@@ -1,3 +1,69 @@
+// Weather Options -----------------------------------------------------
+const weatherOptions = [
+  // Day -------------------------------------------------------------
+  {
+    day: true,
+    condition: "clear",
+    url: new URL("../images/day/Sunny.png", import.meta.url).href,
+  },
+  {
+    day: true,
+    condition: "cloudy",
+    url: new URL("../images/day/Cloudy.png", import.meta.url).href,
+  },
+  {
+    day: true,
+    condition: "partial cloudy",
+    url: new URL("../images/day/Partial-Cloudy.png", import.meta.url).href,
+  },
+  {
+    day: true,
+    condition: "rainy",
+    url: new URL("../images/day/Rainy.png", import.meta.url).href,
+  },
+  {
+    day: true,
+    condition: "stormy",
+    url: new URL("../images/day/Stormy.png", import.meta.url).href,
+  },
+  {
+    day: true,
+    condition: "snowy",
+    url: new URL("../images/day/Snowy.png", import.meta.url).href,
+  },
+  // Night -------------------------------------------------------------
+  {
+    day: false,
+    condition: "clear",
+    url: new URL("../images/night/Night-Moon.png", import.meta.url).href,
+  },
+  {
+    day: false,
+    condition: "cloudy",
+    url: new URL("../images/night/Night-Cloudy.png", import.meta.url).href,
+  },
+  {
+    day: false,
+    condition: "partial cloudy",
+    url: new URL("../images/night/Night-Moon-Cloudy.png", import.meta.url).href,
+  },
+  {
+    day: false,
+    condition: "rainy",
+    url: new URL("../images/night/Night-Rainy.png", import.meta.url).href,
+  },
+  {
+    day: false,
+    condition: "stormy",
+    url: new URL("../images/night/Night-Stormy.png", import.meta.url).href,
+  },
+  {
+    day: false,
+    condition: "snowy",
+    url: new URL("../images/night/Night-Snowy.png", import.meta.url).href,
+  },
+];
+// Clothing -------------------------------------------------------------
 const defaultClothingItems = [
   {
     _id: 0,
@@ -36,15 +102,14 @@ const defaultClothingItems = [
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Coat.png?etag=298717ed89d5e40b1954a1831ae0bdd4",
   },
 ];
-
+// Location -------------------------------------------------------------
 const coordinates = {
   latitude: "45.2108° N",
   longitude: "123.1945° W",
 };
-
 // I registered and am scheduled for a zoom meeting on the 13th
 // with the website provided. I am assuming that means ill recieve
 // my API key after the meeting.
 const APIkey = "";
 
-export { defaultClothingItems, coordinates, APIkey };
+export { weatherOptions, defaultClothingItems, coordinates, APIkey };
