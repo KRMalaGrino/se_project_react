@@ -4,7 +4,7 @@
 
 ## Functionality & Technology
 
-------------------------
+------------------------ 
 
 ## Pictures, GIFs, & screenshots
 
