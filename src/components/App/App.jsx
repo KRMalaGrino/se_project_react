@@ -1,4 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+import { coordinates, APIkey } from "../../utils/constants.js";
+import { getWeather, filterWeatherData } from "../../utils/weatherApi.js";
 
 import Header from "../Header/Header.jsx";
 import Main from "../Main/Main.jsx";
@@ -10,7 +13,11 @@ import ItemModal from "../Modals/ItemModal.jsx";
 
 // Handle logic for getting the weather data
 function App() {
-  const [weatherData, setWeatherData] = useState({ type: "cold" });
+  const [weatherData, setWeatherData] = useState({
+    type: "",
+    temp: { F: 999, C: 999 },
+    city: "",
+  });
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
 
@@ -30,11 +37,20 @@ function App() {
     setActiveModal("");
   };
 
+  useEffect(() => {
+    getWeather(coordinates, APIkey)
+      .then((data) => {
+        const filteredData = filterWeatherData(data);
+        setWeatherData(filteredData);
+      })
+      .catch(console.error);
+  }, []);
+
   return (
     <>
       <div className="app">
         <div className="app__content">
-          <Header onAddClick={handleAddClick} />
+          <Header onAddClick={handleAddClick} weatherData={weatherData} />
           <Main weatherData={weatherData} onCardClick={handleCardClick} />
           <Footer />
           <ModalWithForm

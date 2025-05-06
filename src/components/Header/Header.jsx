@@ -3,20 +3,18 @@ import avatar from "../../images/avatar.jpg"; // Avatar
 
 const userName = "Ryan Joseph Malagrino"; // UserName
 
-// Current Date
-const getCurrentDate = () =>
-  new Date().toLocaleString("default", { month: "long", day: "numeric" });
-// Current Location
-const getCurrentLocation = () => {}; // ----- See section 5 -----
-
 // Add Clothes Button & Header return
-const Header = ({ onAddClick }) => {
+const Header = ({ onAddClick, weatherData }) => {
+  // Current Date
+  const currentDate = () =>
+    new Date().toLocaleString("default", { month: "long", day: "numeric" });
+
   return (
     <header className="header">
       <div className="header__wrapper-left">
         <img className="header__logo" src={logo} alt="logo" />
         <p className="header__date-and-location">
-          {getCurrentDate()} {getCurrentLocation()} ***See Section 5***
+          {currentDate()} {weatherData?.city || ""}
         </p>
       </div>
       <div className="header__wrapper-right">

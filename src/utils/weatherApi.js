@@ -1,16 +1,30 @@
 // import { ApiKey, Coordinates } from "./constants";
 
-// figure function logic for fetching the weather data
-function fetchWeatherData() {}
+const getWeather = ({ latitude, longitude }, APIkey) => {
+  return fetch(
+    `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial&appid=${APIkey}`
+  ).then((res) => {
+    if (res.ok) {
+      return res.json();
+    } else {
+      return Promise.reject(`Error: ${res.status}`);
+    }
+  });
+};
 
-function getWeatherType(temp) {
-  if (temperature >= 86) {
-    return "hot";
-  } else if (temperature >= 66) {
-    return "warm";
-  } else {
-    return "cold";
-  }
-}
+const filterWeatherData = (data) => {
+  const result = {};
+  result.city = data.name;
 
-export default fetchWeatherData;
+  return result;
+
+  //   if (temperature >= 86) {
+  //     return "hot";
+  //   } else if (temperature >= 66) {
+  //     return "warm";
+  //   } else {
+  //     return "cold";
+  //   }
+};
+
+export { getWeather, filterWeatherData };

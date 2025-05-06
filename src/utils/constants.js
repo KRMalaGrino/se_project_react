@@ -1,11 +1,3 @@
-// Register and Get your Api key
-// const ApiKey = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial&appid=${APIkey}`;
-// get coordinates
-// const Coordinates = {
-//   latitude: "",
-//   longitude: "",
-// };
-
 const defaultClothingItems = [
   {
     _id: 0,
@@ -45,4 +37,14 @@ const defaultClothingItems = [
   },
 ];
 
-export { defaultClothingItems };
+const coordinates = {
+  latitude: "45.2108° N",
+  longitude: "123.1945° W",
+};
+
+// I registered and am scheduled for a zoom meeting on the 13th
+// with the website provided. I am assuming that means ill recieve
+// my API key after the meeting.
+const APIkey = "";
+
+export { defaultClothingItems, coordinates, APIkey };
