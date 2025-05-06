@@ -9,8 +9,6 @@ import Footer from "../Footer/Footer.jsx";
 import ModalWithForm from "../Modals/ModalWithForm.jsx";
 import ItemModal from "../Modals/ItemModal.jsx";
 
-// import fetchWeatherData from "../../utils/weatherApi.js";
-
 // Handle logic for getting the weather data
 function App() {
   const [weatherData, setWeatherData] = useState({
