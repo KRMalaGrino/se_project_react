@@ -1,4 +1,7 @@
-import { weatherOptions } from "../../utils/constants.js";
+import {
+  weatherOptions,
+  defaultWeatherOptions,
+} from "../../utils/constants.js";
 
 const WeatherCard = ({ weatherData }) => {
   const filteredOptions = weatherOptions.filter((option) => {
@@ -8,7 +11,13 @@ const WeatherCard = ({ weatherData }) => {
     );
   });
 
-  const weatherOption = filteredOptions[0];
+  let weatherOption;
+  if (filteredOptions.length === 0) {
+    weatherOption = defaultWeatherOptions[weatherData.isDay ? "day" : "night"];
+  } else {
+    weatherOption = filteredOptions[0];
+  }
+
   return (
     <section className="weather-card">
       <img

@@ -63,6 +63,16 @@ const weatherOptions = [
     url: new URL("../images/night/Night-Snowy.png", import.meta.url).href,
   },
 ];
+// Default Weather -------------------------------------------------------
+const defaultWeatherOptions = {
+  day: {
+    url: new URL("../images/day/default.png", import.meta.url).href,
+  },
+  night: {
+    url: new URL("../images/night/default.png", import.meta.url).href,
+  },
+};
+
 // Clothing -------------------------------------------------------------
 const defaultClothingItems = [
   {
@@ -112,4 +122,10 @@ const coordinates = {
 // my API key after the meeting.
 const APIkey = "";
 
-export { weatherOptions, defaultClothingItems, coordinates, APIkey };
+export {
+  weatherOptions,
+  defaultWeatherOptions,
+  defaultClothingItems,
+  coordinates,
+  APIkey,
+};
