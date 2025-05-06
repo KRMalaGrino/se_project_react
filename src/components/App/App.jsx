@@ -12,10 +12,17 @@ import ItemModal from "../Modals/ItemModal.jsx";
 function App() {
   const [weatherData, setWeatherData] = useState({ type: "cold" });
   const [activeModal, setActiveModal] = useState("");
+  const [selectedCard, setSelectedCard] = useState({});
 
-  // Add Clothes Click
+  // Click Add Clothes
   const handleAddClick = () => {
     setActiveModal("add-garment");
+  };
+
+  // Click Card Preview
+  const handleCardClick = (card) => {
+    setActiveModal("card-preview");
+    setSelectedCard(card);
   };
 
   // Close modal
@@ -28,7 +35,7 @@ function App() {
       <div className="app">
         <div className="app__content">
           <Header onAddClick={handleAddClick} />
-          <Main weatherData={weatherData} />
+          <Main weatherData={weatherData} onCardClick={handleCardClick} />
           <Footer />
           <ModalWithForm
             titleText="New Garment"
@@ -95,7 +102,11 @@ function App() {
               </label>
             </fieldset>
           </ModalWithForm>
-          <ItemModal />
+          <ItemModal
+            activeModal={activeModal}
+            card={selectedCard}
+            handleCloseClick={closeActiveModal}
+          ></ItemModal>
         </div>
       </div>
     </>

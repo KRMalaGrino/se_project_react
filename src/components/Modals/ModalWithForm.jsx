@@ -6,11 +6,7 @@ const ModalWithForm = ({
   handleCloseClick,
 }) => {
   return (
-    <div
-      className={`modal ${activeModal === "add-garment" && "modal_opened"}`}
-
-      // className={`modal ${activeModal ? "modal_opened" : ""}`}
-    >
+    <div className={`modal ${activeModal === "add-garment" && "modal_opened"}`}>
       <div className="modal__container">
         <p className="modal__title">{titleText}</p>
         <form className="modal__form">

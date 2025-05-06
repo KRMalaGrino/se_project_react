@@ -1,17 +1,13 @@
-const onClose = () => {};
-
-const ItemModal = (handleCloseClick) => {
+const ItemModal = ({ activeModal, card, handleCloseClick }) => {
   return (
-    <div className="modal">
-      <div className="modal__container modal__container_type_item">
-        <img
-          className="modal__image"
-          src="https://coach.scene7.com/is/image/Coach/cu383_blk_a0?$desktopProductZoom$"
-          alt="Shirt"
-        />
+    <div
+      className={`modal ${activeModal === "card-preview" && "modal_opened"}`}
+    >
+      <div className="modal__container modal__container_type_card-preview">
+        <img className="modal__image" src={card.link} alt="Shirt" />
         <div className="modal__text-wrapper">
-          <p className="modal__title_type_item">Shirt</p>
-          <p className="modal__description">Weather: Hot</p>
+          <p className="modal__title_type_card-preview">{card.name}</p>
+          <p className="modal__weather">Weather: {card.weather}</p>
         </div>
         <button
           onClick={handleCloseClick}
