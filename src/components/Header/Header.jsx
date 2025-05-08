@@ -1,10 +1,9 @@
 import logo from "../../images/wtwr-logo.png"; // WTWR logo
 import avatar from "../../images/avatar.jpg"; // Avatar
 
-const userName = "Ryan Joseph Malagrino"; // UserName
-
 // Add Clothes Button & Header return
 const Header = ({ onAddClick, weatherData }) => {
+  const userName = "Ryan Joseph Malagrino"; // UserName
   // Current Date
   const currentDate = () =>
     new Date().toLocaleString("default", { month: "long", day: "numeric" });

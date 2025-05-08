@@ -1,4 +1,4 @@
-// import { ApiKey, Coordinates } from "./constants";
+// import { APIkey, coordinates } from "./constants";
 
 const getWeather = ({ latitude, longitude }, APIkey) => {
   return fetch(
@@ -12,20 +12,12 @@ const getWeather = ({ latitude, longitude }, APIkey) => {
   });
 };
 
-const filterWeatherData = (data) => {
-  const result = {};
-  result.city = data.name;
-  result.temp = { F: data.main.temp };
-  result.type = getWeatherType(data.main.temp.F);
-  result.condition = data.weather[0].main.toLowerCase();
-  result.isDay = isDay(data.sys, Date.now());
-  return result;
-};
-
+// determining day or night
 const isDay = ({ sunrise, sunset }, now) => {
   return sunrise * 1000 < now && now < sunset * 1000;
 };
 
+// get the weather temperature type
 const getWeatherType = (temperature) => {
   if (temperature >= 86) {
     return "hot";
@@ -34,6 +26,17 @@ const getWeatherType = (temperature) => {
   } else {
     return "cold";
   }
+};
+
+// filter weather data
+const filterWeatherData = (data) => {
+  const result = {};
+  result.city = data.name;
+  result.temp = { F: data.main.temp };
+  result.type = getWeatherType(data.main.temp.F);
+  result.condition = data.weather[0].main.toLowerCase();
+  result.isDay = isDay(data.sys, Date.now());
+  return result;
 };
 
 export { getWeather, filterWeatherData };
