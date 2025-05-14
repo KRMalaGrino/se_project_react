@@ -1,6 +1,6 @@
 // Weather Options -----------------------------------------------------
 const weatherOptions = [
-  // Day -------------------------------------------------------------
+  // Day -----------------------------
   {
     day: true,
     condition: "clear",
@@ -31,7 +31,7 @@ const weatherOptions = [
     condition: "snowy",
     url: new URL("../images/day/Snowy.png", import.meta.url).href,
   },
-  // Night -------------------------------------------------------------
+  // Night -----------------------------
   {
     day: false,
     condition: "clear",
@@ -114,13 +114,12 @@ const defaultClothingItems = [
 ];
 // Location -------------------------------------------------------------
 const coordinates = {
-  latitude: "45.2108° N",
-  longitude: "123.1945° W",
+  latitude: "45.2108",
+  longitude: "123.1945",
 };
-// I registered and am scheduled for a zoom meeting on the 13th
-// with the website provided. I am assuming that means ill recieve
-// my API key after the meeting.
-const APIkey = "";
+
+// API Key
+const APIkey = "8296d06fc295121a34eff3fa523cc028";
 
 export {
   weatherOptions,
