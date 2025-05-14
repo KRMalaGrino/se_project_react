@@ -14,4 +14,6 @@
 
 @import url(./components/Footer/Footer.css);
 
-@import url(./components/Modals/Modals.css);
+@import url(./components/ModalWithForm/ModalWithForm.css);
+
+@import url(./components/ItemModal/ItemModal.css);

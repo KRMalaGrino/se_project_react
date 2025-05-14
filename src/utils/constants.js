@@ -1,6 +1,6 @@
-// Weather Options -----------------------------------------------------
+// Weather Options
 const weatherOptions = [
-  // Day -----------------------------
+  // Day
   {
     day: true,
     condition: "clear",
@@ -8,30 +8,30 @@ const weatherOptions = [
   },
   {
     day: true,
-    condition: "cloudy",
+    condition: "clouds",
     url: new URL("../images/day/Cloudy.png", import.meta.url).href,
   },
   {
     day: true,
-    condition: "partial cloudy",
+    condition: "partial clouds",
     url: new URL("../images/day/Partial-Cloudy.png", import.meta.url).href,
   },
   {
     day: true,
-    condition: "rainy",
+    condition: "rain",
     url: new URL("../images/day/Rainy.png", import.meta.url).href,
   },
   {
     day: true,
-    condition: "stormy",
+    condition: "storm",
     url: new URL("../images/day/Stormy.png", import.meta.url).href,
   },
   {
     day: true,
-    condition: "snowy",
+    condition: "snow",
     url: new URL("../images/day/Snowy.png", import.meta.url).href,
   },
-  // Night -----------------------------
+  // Night
   {
     day: false,
     condition: "clear",
@@ -39,31 +39,32 @@ const weatherOptions = [
   },
   {
     day: false,
-    condition: "cloudy",
+    condition: "clouds",
     url: new URL("../images/night/Night-Cloudy.png", import.meta.url).href,
   },
   {
     day: false,
-    condition: "partial cloudy",
+    condition: "partial clouds",
     url: new URL("../images/night/Night-Moon-Cloudy.png", import.meta.url).href,
   },
   {
     day: false,
-    condition: "rainy",
+    condition: "rain",
     url: new URL("../images/night/Night-Rainy.png", import.meta.url).href,
   },
   {
     day: false,
-    condition: "stormy",
+    condition: "storm",
     url: new URL("../images/night/Night-Stormy.png", import.meta.url).href,
   },
   {
     day: false,
-    condition: "snowy",
+    condition: "snow",
     url: new URL("../images/night/Night-Snowy.png", import.meta.url).href,
   },
 ];
-// Default Weather -------------------------------------------------------
+
+// Default Weather
 const defaultWeatherOptions = {
   day: {
     url: new URL("../images/day/default.png", import.meta.url).href,
@@ -73,7 +74,7 @@ const defaultWeatherOptions = {
   },
 };
 
-// Clothing -------------------------------------------------------------
+// Clothing
 const defaultClothingItems = [
   {
     _id: 0,
@@ -112,7 +113,7 @@ const defaultClothingItems = [
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Coat.png?etag=298717ed89d5e40b1954a1831ae0bdd4",
   },
 ];
-// Location -------------------------------------------------------------
+// Location
 const coordinates = {
   latitude: "45.2108",
   longitude: "123.1945",
