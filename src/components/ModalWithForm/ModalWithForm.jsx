@@ -6,7 +6,7 @@ const ModalWithForm = ({
   isOpen,
 }) => {
   return (
-    <div className={`modal-with-form ${isOpen && "modal_opened"}`}>
+    <div className={`modal-with-form ${isOpen && "modal-with-form_opened"}`}>
       <div className="modal-with-form__container">
         <p className="modal-with-form__title">{titleText}</p>
         <form className="modal-with-form__form">
