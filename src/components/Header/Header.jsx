@@ -14,7 +14,9 @@ const Header = ({ onAddClick, weatherData }) => {
   return (
     <header className="header">
       <div className="header__wrapper-left">
-        <img className="header__logo" src={logo} alt="logo" />
+        <Link to="/">
+          <img className="header__logo" src={logo} alt="logo" />
+        </Link>
         <p className="header__date-and-location">
           {currentDate()} {weatherData?.city || ""}
         </p>
@@ -28,14 +30,16 @@ const Header = ({ onAddClick, weatherData }) => {
         >
           + Add Clothes
         </button>
-        <Link to="/profile">
-          <p className="header__username">{userName}</p>
+        <Link to="/profile" className="header__username">
+          {userName}
         </Link>
-        <img
-          className="header__avatar"
-          src={avatar}
-          alt={`${userName}'s avatar`}
-        />
+        <Link to="/profile">
+          <img
+            className="header__avatar"
+            src={avatar}
+            alt={`${userName}'s avatar`}
+          />
+        </Link>
       </div>
     </header>
   );
