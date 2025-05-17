@@ -44,6 +44,12 @@ function App() {
       .catch(console.error);
   }, []);
 
+  // const [checked, setChecked] = React.useState(false);
+
+  // const handleSwitch = () => {
+  //   setChecked(!checked);
+  // };
+
   return (
     <div className="app">
       <div className="app__content">

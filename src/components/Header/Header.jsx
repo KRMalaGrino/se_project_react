@@ -1,5 +1,6 @@
 import logo from "../../images/wtwr-logo.png"; // WTWR logo
 import avatar from "../../images/avatar.jpg"; // Avatar
+import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 
 // Add Clothes Button & Header return
 const Header = ({ onAddClick, weatherData }) => {
@@ -17,6 +18,7 @@ const Header = ({ onAddClick, weatherData }) => {
         </p>
       </div>
       <div className="header__wrapper-right">
+        <ToggleSwitch />
         <button
           onClick={onAddClick}
           type="button"
