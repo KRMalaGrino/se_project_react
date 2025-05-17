@@ -46,3 +46,7 @@
 .toggle-switch__checkbox:checked ~ .toggle-switch__slider {
   left: 28px;
 }
+
+.toggle-switch__text_color_white {
+  color: white;
+}
