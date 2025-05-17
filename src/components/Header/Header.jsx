@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import logo from "../../images/wtwr-logo.png"; // WTWR logo
 import avatar from "../../images/avatar.jpg"; // Avatar
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
@@ -26,7 +28,9 @@ const Header = ({ onAddClick, weatherData }) => {
         >
           + Add Clothes
         </button>
-        <p className="header__username">{userName}</p>
+        <Link to="/profile">
+          <p className="header__username">{userName}</p>
+        </Link>
         <img
           className="header__avatar"
           src={avatar}

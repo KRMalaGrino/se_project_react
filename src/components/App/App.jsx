@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Routes, Route } from "react-router-dom";
 
 import { coordinates, APIkey } from "../../utils/constants.js";
 import { getWeather, filterWeatherData } from "../../utils/weatherApi.js";
@@ -60,7 +61,15 @@ function App() {
       <div className="app">
         <div className="app__content">
           <Header onAddClick={handleAddClick} weatherData={weatherData} />
-          <Main weatherData={weatherData} onCardClick={handleCardClick} />
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <Main weatherData={weatherData} onCardClick={handleCardClick} />
+              }
+            />
+            <Route path="/profile" element={<p>Profile</p>} />
+          </Routes>
           <Footer />
           <ModalWithForm
             titleText="New Garment"
