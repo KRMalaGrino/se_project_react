@@ -1,4 +1,5 @@
 const baseUrl = "http://localhost:3001";
+const baseHeader = "Content-Type: application/json";
 
   getAppInfo() {
     return Promise.all([])
@@ -12,10 +13,24 @@ const baseUrl = "http://localhost:3001";
   }
 
   const getClothingItems() {
-    return fetch(`${baseUrl}/items` ,{
-        headers: ,
-        body: JSON.stringify({}),
+    return fetch(`${baseUrl}/items`, {
+        headers: baseHeader,
     }).then(handleResponse)
   }
 
-  export {};
+  const addNewClothingItem() {
+    return fetch(`${baseUrl}/items`, {
+        method: "POST",
+        headers: baseHeader,
+        body: JSON.stringify({name, imageUrl, weather}),
+    }).then(handleResponse)
+  }
+
+  const deleteClothingItem() {
+    return fetch(`${baseUrl}/items/${}`, {
+        method: "DELETE",
+        headers: baseHeader,
+    }).then(handleResponse)
+  }
+
+  export {getClothingItems, addNewClothingItem, deleteClothingItem};
