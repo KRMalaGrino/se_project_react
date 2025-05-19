@@ -88,7 +88,12 @@ function App() {
             />
             <Route
               path="/profile"
-              element={<Profile weatherData={weatherData} />}
+              element={
+                <Profile
+                  onAddClick={handleAddClick}
+                  onCardClick={handleCardClick}
+                />
+              }
             />
           </Routes>
           <Footer />

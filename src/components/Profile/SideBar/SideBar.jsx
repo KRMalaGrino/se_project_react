@@ -1,7 +1,7 @@
 import avatar from "../../../images/avatar.jpg"; // Avatar
 
 const SideBar = () => {
-  const userName = "Ryan Joseph Malagrino"; // UserName
+  const userName = "Ryan Malagrino"; // UserName
 
   return (
     <div className="sideBar">

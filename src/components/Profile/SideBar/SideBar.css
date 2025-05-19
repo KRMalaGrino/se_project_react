@@ -5,7 +5,7 @@
 
   margin: 0 116px 0 0;
   padding: 0;
-  /* max-width: 229px; */
+  width: max-content;
 }
 
 .sideBar__avatar {

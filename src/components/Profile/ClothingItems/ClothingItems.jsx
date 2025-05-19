@@ -14,7 +14,7 @@ const ClothingItems = ({ onAddClick, onCardClick }) => {
           + Add new
         </button>
       </div>
-      <ul className="cards__list">
+      <ul className="clothingItems__list">
         {defaultClothingItems.map((item) => {
           return (
             <ItemCard key={item._id} item={item} onCardClick={onCardClick} /> // pass onCardClick as prop

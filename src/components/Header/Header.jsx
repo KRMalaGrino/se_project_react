@@ -6,7 +6,7 @@ import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 
 // Add Clothes Button & Header return
 const Header = ({ onAddClick, weatherData }) => {
-  const userName = "Ryan Joseph Malagrino"; // UserName
+  const userName = "Ryan Malagrino"; // UserName
   // Current Date
   const currentDate = () =>
     new Date().toLocaleString("default", { month: "long", day: "numeric" });

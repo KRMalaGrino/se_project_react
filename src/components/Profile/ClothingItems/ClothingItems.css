@@ -25,3 +25,15 @@
 
   cursor: pointer;
 }
+
+.clothingItems__list {
+  margin: 34px 0 0;
+  padding: 0;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 20px;
+
+  list-style-type: none;
+}
