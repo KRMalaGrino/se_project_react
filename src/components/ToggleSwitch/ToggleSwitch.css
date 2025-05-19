@@ -5,11 +5,17 @@
 
   width: 56px;
   height: 28px;
-  border: 2px solid black;
+  border: 2px solid #7e7e7e;
   border-radius: 20px;
   overflow: hidden;
 
   cursor: pointer;
+
+  transition: border 0.2s linear;
+}
+
+.toggle-switch:hover {
+  border: 2px solid black;
 }
 
 .toggle-switch__checkbox {
@@ -26,6 +32,10 @@
   border-radius: 20px;
 
   transition: all 0.3s;
+}
+
+.toggle-switch__slider:hover {
+  width: 33px;
 }
 
 .toggle-switch__text {

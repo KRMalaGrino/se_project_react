@@ -24,3 +24,9 @@
   font-size: 20px;
   line-height: 100%;
 }
+
+@media screen and (max-width: 627px) {
+  .sideBar {
+    margin: 0;
+  }
+}

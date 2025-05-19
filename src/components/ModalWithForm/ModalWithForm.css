@@ -35,7 +35,7 @@
   max-width: 498px;
   background-color: white;
 
-  font-family: Cabinet Grotesk;
+  font-family: "Cabinet Grotesk";
   font-size: 16px;
   line-height: 20px;
 }
@@ -77,7 +77,14 @@
 
 .modal-with-form__radio-label {
   margin: 0 0 8px;
+
+  /* opacity: 0.6;
+  transition: opacity 0.2s ease; */
 }
+
+/* .modal-with-form__radio-label input:checked {
+  opacity: 1;
+} */
 
 .modal-with-form__input {
   margin: 0;
@@ -95,15 +102,21 @@
   margin: 24px 0 0;
   padding: 8px 16px;
 
+  font-size: 15px;
+
   width: 124px;
   height: 36px;
   border: none;
   border-radius: 8px;
-
   background-color: #000000;
-
-  font-size: 15px;
   color: #ffffff;
+  opacity: 1;
+
+  transition: opacity 0.2s linear;
+}
+
+.modal-with-form__add-garment-btn:hover {
+  opacity: 0.6;
 }
 
 .modal-with-form__close-btn {

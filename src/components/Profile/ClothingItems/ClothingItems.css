@@ -37,3 +37,13 @@
 
   list-style-type: none;
 }
+
+@media screen and (max-width: 627px) {
+  .clothingItems {
+    align-items: center;
+  }
+
+  .clothingItems__list {
+    justify-content: center;
+  }
+}
