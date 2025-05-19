@@ -17,6 +17,7 @@ import Main from "../Main/Main.jsx";
 import Footer from "../Footer/Footer.jsx";
 import ItemModal from "../ItemModal/ItemModal.jsx";
 import AddItemModal from "../AddItemModal/AddItemModal.jsx";
+import ConfirmDeleteModal from "../ConfirmDeleteModal/ConfirmDeleteModal.jsx";
 
 // Handle logic for getting the weather data
 function App() {
@@ -67,6 +68,26 @@ function App() {
       });
   };
 
+  // Click delete item button
+  const handleDeleteItem = (_id) => {
+    deleteClothingItem(_id)
+      .then(() => {
+        setClothingItems((prevItems) =>
+          prevItems.filter((item) => item._id !== _id)
+        );
+        closeActiveModal();
+      })
+      .catch((err) => {
+        console.error("Failed to delete clothing item", err);
+      });
+  };
+
+  // Click Confirm Delete Modal
+  const handleConfirmDelete = () => {
+    setActiveModal("confirm-delete");
+  };
+
+  // use effect for weather coordinates
   useEffect(() => {
     getWeather(coordinates, APIkey)
       .then((data) => {
@@ -76,10 +97,10 @@ function App() {
       .catch(console.error);
   }, []);
 
+  // use effect for getting clothing items
   useEffect(() => {
     getClothingItems()
       .then((data) => {
-        console.log(data);
         setClothingItems(data);
       })
       .catch(console.error);
@@ -124,8 +145,14 @@ function App() {
           <ItemModal
             activeModal={activeModal}
             card={selectedCard}
+            onDeleteClick={handleConfirmDelete}
             handleCloseClick={closeActiveModal}
-          ></ItemModal>
+          />
+          <ConfirmDeleteModal
+            activeModal={activeModal}
+            onDeleteClick={() => handleDeleteItem(selectedCard._id)}
+            handleCloseClick={closeActiveModal}
+          />
         </div>
       </div>
     </CurrentTemperatureUnitContext.Provider>

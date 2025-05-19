@@ -2,7 +2,7 @@ const baseUrl = "http://localhost:3001";
 const baseHeader = { "Content-Type": "application/json" };
 
 function getAppInfo() {
-  return Promise.all([]);
+  return Promise.all([getClothingItems()]);
 }
 
 function handleResponse(res) {
@@ -13,7 +13,9 @@ function handleResponse(res) {
 }
 
 function getClothingItems() {
-  return fetch(`${baseUrl}/items`, {}).then(handleResponse);
+  return fetch(`${baseUrl}/items`, {
+    headers: baseHeader,
+  }).then(handleResponse);
 }
 
 function addNewClothingItem(name, imageUrl, weather) {
@@ -27,6 +29,7 @@ function addNewClothingItem(name, imageUrl, weather) {
 function deleteClothingItem(_id) {
   return fetch(`${baseUrl}/items/${_id}`, {
     method: "DELETE",
+    headers: baseHeader,
   }).then(handleResponse);
 }
 
