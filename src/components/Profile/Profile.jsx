@@ -1,5 +1,3 @@
-import { useLocation } from "react-router-dom";
-
 import SideBar from "./SideBar/SideBar.jsx";
 import ClothingItems from "./ClothingItems/ClothingItems.jsx";
 

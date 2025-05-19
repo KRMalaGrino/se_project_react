@@ -17,7 +17,7 @@ const ClothingItems = ({ onAddClick, onCardClick }) => {
       <ul className="cards__list">
         {defaultClothingItems.map((item) => {
           return (
-            <ItemCard key={item._id} item={item} /> // onCardClick={onCardClick} // pass onCardClick as prop
+            <ItemCard key={item._id} item={item} onCardClick={onCardClick} /> // pass onCardClick as prop
           );
         })}
       </ul>
