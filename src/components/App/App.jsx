@@ -1,27 +1,27 @@
 import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 
+import { defaultClothingItems } from "../../utils/constants.js";
 import { coordinates, APIkey } from "../../utils/constants.js";
 import { getWeather, filterWeatherData } from "../../utils/weatherApi.js";
+import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext.jsx";
 
 import Header from "../Header/Header.jsx";
+import Profile from "../Profile/Profile.jsx";
 import Main from "../Main/Main.jsx";
 import Footer from "../Footer/Footer.jsx";
 import ItemModal from "../ItemModal/ItemModal.jsx";
-import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext.jsx";
 import AddItemModal from "../AddItemModal/AddItemModal.jsx";
-import { defaultClothingItems } from "../../utils/constants.js";
 
 // Handle logic for getting the weather data
 function App() {
   const [weatherData, setWeatherData] = useState({
     type: "",
-    temp: { F: 0, C: 0 },
+    temp: { F: 999, C: 999 },
     city: "",
     condition: "",
     isDay: false,
   });
-
   const [clothingItems, setClothingItems] = useState(defaultClothingItems);
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
@@ -86,7 +86,10 @@ function App() {
                 />
               }
             />
-            <Route path="/profile" element={<p>Profile</p>} />
+            <Route
+              path="/profile"
+              element={<Profile weatherData={weatherData} />}
+            />
           </Routes>
           <Footer />
           <AddItemModal
