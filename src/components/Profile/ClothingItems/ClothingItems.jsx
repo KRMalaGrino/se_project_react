@@ -1,7 +1,6 @@
 import ItemCard from "../../ItemCard/ItemCard.jsx";
-import { defaultClothingItems } from "../../../utils/constants.js";
 
-const ClothingItems = ({ onAddClick, onCardClick }) => {
+const ClothingItems = ({ onAddClick, onCardClick, clothingItems }) => {
   return (
     <div className="clothingItems">
       <div className="clothingItems__text-wrapper">
@@ -15,7 +14,7 @@ const ClothingItems = ({ onAddClick, onCardClick }) => {
         </button>
       </div>
       <ul className="clothingItems__list">
-        {defaultClothingItems.map((item) => {
+        {clothingItems.map((item) => {
           return (
             <ItemCard key={item._id} item={item} onCardClick={onCardClick} /> // pass onCardClick as prop
           );

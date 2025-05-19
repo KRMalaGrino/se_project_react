@@ -5,6 +5,11 @@ import { defaultClothingItems } from "../../utils/constants.js";
 import { coordinates, APIkey } from "../../utils/constants.js";
 import { getWeather, filterWeatherData } from "../../utils/weatherApi.js";
 import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext.jsx";
+import {
+  getClothingItems,
+  addNewClothingItem,
+  deleteClothingItem,
+} from "../../utils/api.js";
 
 import Header from "../Header/Header.jsx";
 import Profile from "../Profile/Profile.jsx";
@@ -50,13 +55,16 @@ function App() {
 
   // Add Clothing Item Modal Submission
   const handleAddItemModalSubmit = ({ name, imageUrl, weather }) => {
-    // add new clothing item
-    setClothingItems((mostUpToDateArray) => [
-      { name, link: imageUrl, weather },
-      ...mostUpToDateArray,
-    ]);
-    // close active modal
-    closeActiveModal();
+    addNewClothingItem(name, imageUrl, weather)
+      .then((newItem) => {
+        // add new clothing item
+        setClothingItems((prevItems) => [newItem, ...prevItems]);
+        // close active modal
+        closeActiveModal();
+      })
+      .catch((err) => {
+        console.error("Failed to add new clothing item", err);
+      });
   };
 
   useEffect(() => {
@@ -64,6 +72,15 @@ function App() {
       .then((data) => {
         const filteredData = filterWeatherData(data);
         setWeatherData(filteredData);
+      })
+      .catch(console.error);
+  }, []);
+
+  useEffect(() => {
+    getClothingItems()
+      .then((data) => {
+        console.log(data);
+        setClothingItems(data);
       })
       .catch(console.error);
   }, []);
@@ -92,6 +109,7 @@ function App() {
                 <Profile
                   onAddClick={handleAddClick}
                   onCardClick={handleCardClick}
+                  clothingItems={clothingItems}
                 />
               }
             />

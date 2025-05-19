@@ -1,36 +1,33 @@
 const baseUrl = "http://localhost:3001";
-const baseHeader = "Content-Type: application/json";
+const baseHeader = { "Content-Type": "application/json" };
 
-  getAppInfo() {
-    return Promise.all([])
+function getAppInfo() {
+  return Promise.all([]);
+}
+
+function handleResponse(res) {
+  if (res.ok) {
+    return res.json();
   }
+  return Promise.reject(`Error: ${res.status}`);
+}
 
-  handleResponse(res) {
-    if (res.ok) {
-      return res.json();
-    }
-    return Promise.reject(`Error: ${res.status}`);
-  }
+function getClothingItems() {
+  return fetch(`${baseUrl}/items`, {}).then(handleResponse);
+}
 
-  const getClothingItems() {
-    return fetch(`${baseUrl}/items`, {
-        headers: baseHeader,
-    }).then(handleResponse)
-  }
+function addNewClothingItem(name, imageUrl, weather) {
+  return fetch(`${baseUrl}/items`, {
+    method: "POST",
+    headers: baseHeader,
+    body: JSON.stringify({ name, imageUrl, weather }),
+  }).then(handleResponse);
+}
 
-  const addNewClothingItem() {
-    return fetch(`${baseUrl}/items`, {
-        method: "POST",
-        headers: baseHeader,
-        body: JSON.stringify({name, imageUrl, weather}),
-    }).then(handleResponse)
-  }
+function deleteClothingItem(_id) {
+  return fetch(`${baseUrl}/items/${_id}`, {
+    method: "DELETE",
+  }).then(handleResponse);
+}
 
-  const deleteClothingItem() {
-    return fetch(`${baseUrl}/items/${}`, {
-        method: "DELETE",
-        headers: baseHeader,
-    }).then(handleResponse)
-  }
-
-  export {getClothingItems, addNewClothingItem, deleteClothingItem};
+export { getClothingItems, addNewClothingItem, deleteClothingItem };
