@@ -77,6 +77,9 @@ const AddItemModal = ({ handleCloseClick, isOpen, onAddItemModalSubmit }) => {
           onChange={handleNameChange}
           value={name}
         />
+        <span class="modal-with-form__error" id="addItem-text-error">
+          Please fill out this field.
+        </span>
       </label>
       <label className="modal-with-form__label" htmlFor="Image-Url">
         {" "}
@@ -91,6 +94,9 @@ const AddItemModal = ({ handleCloseClick, isOpen, onAddItemModalSubmit }) => {
           onChange={handleImageUrlChange}
           value={imageUrl}
         />
+        <span class="modal-with-form__error" id="addItem-url-error">
+          Please enter a URL.
+        </span>
       </label>
       <fieldset className="modal-with-form__fieldset">
         <legend className="modal-with-form__legend">
