@@ -1,10 +1,6 @@
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 
-import {
-  enableValidation,
-  resetValidation,
-  settings,
-} from "../../utils/validation.js";
+// import useFormValidation from "../../utils/validation.js";
 
 import ModalWithForm from "../ModalWithForm/ModalWithForm.jsx";
 
@@ -12,7 +8,6 @@ const AddItemModal = ({ handleCloseClick, isOpen, onAddItemModalSubmit }) => {
   const [name, setName] = useState("");
   const [imageUrl, setImageUrl] = useState("");
   const [weather, setWeather] = useState("");
-  const formRef = useRef(null);
 
   const handleNameChange = (e) => {
     setName(e.target.value);
@@ -36,23 +31,6 @@ const AddItemModal = ({ handleCloseClick, isOpen, onAddItemModalSubmit }) => {
     setWeather("");
   };
 
-  // enables validation
-  useEffect(() => {
-    if (isOpen && formRef.current) {
-      enableValidation(settings);
-    }
-  }, [isOpen]);
-
-  // resets validation
-  useEffect(() => {
-    if (!isOpen && formRef.current) {
-      const inputList = Array.from(
-        formRef.current.querySelectorAll(settings.inputSelector)
-      );
-      resetValidation(formRef.current, inputList, settings);
-    }
-  }, [isOpen]);
-
   return (
     <ModalWithForm
       titleText="New Garment"
@@ -60,7 +38,6 @@ const AddItemModal = ({ handleCloseClick, isOpen, onAddItemModalSubmit }) => {
       handleCloseClick={handleCloseClick}
       isOpen={isOpen}
       onSubmit={handleSubmit}
-      formRef={formRef}
     >
       <label className="modal-with-form__label" htmlFor="Name">
         {" "}

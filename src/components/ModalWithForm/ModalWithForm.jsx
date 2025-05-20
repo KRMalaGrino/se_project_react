@@ -5,7 +5,6 @@ const ModalWithForm = ({
   handleCloseClick,
   isOpen,
   onSubmit,
-  formRef,
 }) => {
   return (
     <div className={`modal-with-form ${isOpen && "modal-with-form_opened"}`}>
@@ -15,7 +14,6 @@ const ModalWithForm = ({
           className="modal-with-form__form"
           id="modal-with-form"
           onSubmit={onSubmit}
-          ref={formRef}
         >
           {children}
           <button className="modal-with-form__add-garment-btn">
