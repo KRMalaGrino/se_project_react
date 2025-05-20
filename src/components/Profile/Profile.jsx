@@ -1,5 +1,5 @@
 import SideBar from "./SideBar/SideBar.jsx";
-import ClothingItems from "./ClothingItems/ClothingItems.jsx";
+import ClothesSection from "./ClothesSection/ClothesSection.jsx";
 
 const Profile = ({ onAddClick, onCardClick, clothingItems }) => {
   return (
@@ -7,8 +7,8 @@ const Profile = ({ onAddClick, onCardClick, clothingItems }) => {
       <section className="profile__sideBar">
         <SideBar />
       </section>
-      <section className="profile__clothing-items">
-        <ClothingItems
+      <section className="profile__clothesSection">
+        <ClothesSection
           onAddClick={onAddClick}
           onCardClick={onCardClick}
           clothingItems={clothingItems}

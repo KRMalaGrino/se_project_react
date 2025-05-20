@@ -1,19 +1,19 @@
 import ItemCard from "../../ItemCard/ItemCard.jsx";
 
-const ClothingItems = ({ onAddClick, onCardClick, clothingItems }) => {
+const ClothesSection = ({ onAddClick, onCardClick, clothingItems }) => {
   return (
-    <div className="clothingItems">
-      <div className="clothingItems__text-wrapper">
-        <p className="clothingItems__title">Your items</p>
+    <div className="clothesSection">
+      <div className="clothesSection__text-wrapper">
+        <p className="clothesSection__title">Your items</p>
         <button
-          className="clothingItems__add-btn"
+          className="clothesSection__add-btn"
           type="button"
           onClick={onAddClick}
         >
           + Add new
         </button>
       </div>
-      <ul className="clothingItems__list">
+      <ul className="clothesSection__list">
         {clothingItems.map((item) => {
           return (
             <ItemCard key={item._id} item={item} onCardClick={onCardClick} /> // pass onCardClick as prop
@@ -24,4 +24,4 @@ const ClothingItems = ({ onAddClick, onCardClick, clothingItems }) => {
   );
 };
 
-export default ClothingItems;
+export default ClothesSection;

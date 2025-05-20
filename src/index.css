@@ -8,7 +8,7 @@
 
 @import url(./components/Profile/Profile.css);
 @import url(./components/Profile/SideBar/SideBar.css);
-@import url(./components/Profile/ClothingItems/ClothingItems.css);
+@import url(./components/Profile/ClothesSection/ClothesSection.css);
 
 @import url(./components/Main/Main.css);
 @import url(./components/WeatherCard/WeatherCard.css);
