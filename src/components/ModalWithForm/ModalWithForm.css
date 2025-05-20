@@ -94,6 +94,25 @@
   border-bottom: 1px solid #000000;
 }
 
+.modal-with-form__input_type_error {
+  border: 2px solid rgb(255, 0, 0, 0.6);
+}
+
+.modal-with-form__error {
+  margin: 0;
+  padding: 0;
+  display: block;
+
+  color: #ff0000b2;
+  line-height: 110%;
+
+  visibility: hidden;
+}
+
+.modal-with-form_error_visible {
+  visibility: visible;
+}
+
 .modal-with-form__radio-input {
   margin: 0 8px 0 0;
 }
@@ -113,6 +132,11 @@
   opacity: 1;
 
   transition: opacity 0.2s linear;
+}
+
+.modal-with-form__add-garment-btn_disabled {
+  opacity: 0.3;
+  cursor: auto;
 }
 
 .modal-with-form__add-garment-btn:hover {
