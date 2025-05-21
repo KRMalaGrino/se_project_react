@@ -18,7 +18,7 @@ function getClothingItems() {
   }).then(handleResponse);
 }
 
-function addNewClothingItem(name, imageUrl, weather) {
+function addNewClothingItem({ name, imageUrl, weather }) {
   return fetch(`${baseUrl}/items`, {
     method: "POST",
     headers: baseHeader,

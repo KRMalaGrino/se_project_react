@@ -21,11 +21,11 @@ const Main = ({ weatherData, onCardClick, clothingItems }) => {
             .filter((item) => {
               return item.weather === weatherData.type;
             })
-            .map((item) => {
+            .map((filteredItem) => {
               return (
                 <ItemCard
-                  key={item._id}
-                  item={item}
+                  key={filteredItem._id}
+                  item={filteredItem}
                   onCardClick={onCardClick}
                 />
               );
