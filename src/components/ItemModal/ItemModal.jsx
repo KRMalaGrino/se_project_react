@@ -1,4 +1,4 @@
-const ItemModal = ({ activeModal, card, handleCloseClick, onDeleteClick }) => {
+const ItemModal = ({ activeModal, card, onDeleteClick, handleCloseClick }) => {
   return (
     <div
       className={`item-modal ${
@@ -6,7 +6,11 @@ const ItemModal = ({ activeModal, card, handleCloseClick, onDeleteClick }) => {
       }`}
     >
       <div className="item-modal__container">
-        <img className="item-modal__image" src={card.link} alt={card.name} />
+        <img
+          className="item-modal__image"
+          src={card.imageUrl}
+          alt={card.name}
+        />
         <div className="item-modal__lower-wrapper">
           <div className="item-modal__text-wrapper">
             <p className="item-modal__title">{card.name}</p>

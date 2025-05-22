@@ -1,13 +1,9 @@
 const ItemCard = ({ item, onCardClick }) => {
-  const handleCardClick = () => {
-    onCardClick(item);
-  };
-
   return (
     <li className="card">
       <h2 className="card__text">{item.name}</h2>
       <img
-        onClick={handleCardClick}
+        onClick={onCardClick}
         className="card__image"
         src={item.imageUrl}
         alt={item.name}
