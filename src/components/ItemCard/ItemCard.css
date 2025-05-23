@@ -19,7 +19,7 @@
   padding: 2px 12px;
 
   width: 73px;
-  height: 24px;
+  height: 21px;
 
   position: absolute;
   top: 15px;
@@ -32,6 +32,12 @@
   line-height: 20px;
   text-align: center;
   color: #000000;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
 
   background-color: white;
   border-radius: 7px;

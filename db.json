@@ -56,6 +56,12 @@
       "imageUrl": "https://www.converse.com/dw/image/v2/BCZC_PRD/on/demandware.static/-/Sites-cnv-master-catalog/default/dw96b25583/images/a_107/A04697C_A_107X1.jpg?sw=964",
       "weather": "warm",
       "_id": 24
+    },
+    {
+      "name": "new sneaker 2",
+      "imageUrl": "https://comfyblouse.com/cdn/shop/files/IMG_4396.jpg?v=1738179876&width=1346",
+      "weather": "warm",
+      "_id": 25
     }
   ]
 }
