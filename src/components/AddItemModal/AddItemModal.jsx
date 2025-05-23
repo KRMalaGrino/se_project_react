@@ -21,7 +21,7 @@ const AddItemModal = ({ handleCloseClick, isOpen, onAddItemModalSubmit }) => {
     setWeather(e.target.value);
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     // add new clothing item submission
     onAddItemModalSubmit({ name, imageUrl, weather });

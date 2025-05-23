@@ -144,12 +144,12 @@ function App() {
           <ItemModal
             activeModal={activeModal}
             card={selectedCard}
-            onDeleteClick={handleConfirmDelete}
+            onDeleteClick={() => handleConfirmDelete(selectedCard)}
             handleCloseClick={closeActiveModal}
           />
           <ConfirmDeleteModal
             activeModal={activeModal}
-            onDeleteClick={() => handleDeleteItem(selectedCard._id)}
+            onDeleteClick={() => handleDeleteItem(selectedCard?._id)}
             handleCloseClick={closeActiveModal}
           />
         </div>

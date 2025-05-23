@@ -6,11 +6,13 @@ const ItemModal = ({ activeModal, card, onDeleteClick, handleCloseClick }) => {
       }`}
     >
       <div className="item-modal__container">
-        <img
-          className="item-modal__image"
-          src={card.imageUrl}
-          alt={card.name}
-        />
+        {card?.imageUrl && (
+          <img
+            className="item-modal__image"
+            src={card.imageUrl}
+            alt={card.name}
+          />
+        )}
         <div className="item-modal__lower-wrapper">
           <div className="item-modal__text-wrapper">
             <p className="item-modal__title">{card.name}</p>
