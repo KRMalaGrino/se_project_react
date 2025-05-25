@@ -33,4 +33,9 @@ function deleteClothingItem(_id) {
   }).then(handleResponse);
 }
 
-export { getClothingItems, addNewClothingItem, deleteClothingItem };
+export {
+  handleResponse,
+  getClothingItems,
+  addNewClothingItem,
+  deleteClothingItem,
+};

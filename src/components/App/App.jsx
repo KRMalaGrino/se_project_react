@@ -149,7 +149,7 @@ function App() {
             handleCloseClick={closeActiveModal}
           />
           <ConfirmDeleteModal
-            activeModal={activeModal}
+            isOpen={activeModal === "confirm-delete"}
             onDeleteClick={() => handleDeleteItem(selectedCard?._id)}
             handleCloseClick={closeActiveModal}
           />

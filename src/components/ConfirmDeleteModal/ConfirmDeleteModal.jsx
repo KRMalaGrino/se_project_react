@@ -1,12 +1,12 @@
 const ConfirmDeleteModal = ({
-  activeModal,
+  isOpen,
   handleCloseClick,
   onDeleteClick,
 }) => {
   return (
     <div
       className={`confirm-delete-modal ${
-        activeModal === "confirm-delete" ? "confirm-delete-modal_opened" : ""
+        activeModal === isOpen ? "confirm-delete-modal_opened" : ""
       }`}
     >
       <div className="confirm-delete-modal__container">
