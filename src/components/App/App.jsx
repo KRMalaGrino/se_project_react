@@ -53,6 +53,22 @@ function App() {
     setActiveModal("");
   };
 
+  // Escape key close modal
+  useEffect(() => {
+    if (!activeModal) return;
+    const handleEscClose = (e) => {
+      if (e.key === "Escape") {
+        closeActiveModal();
+      }
+    };
+
+    document.addEventListener("keydown", handleEscClose);
+
+    return () => {
+      document.removeEventListener("keydown", handleEscClose);
+    };
+  }, [activeModal]);
+
   // Add Clothing Item Modal Submission
   const handleAddItemModalSubmit = ({ name, imageUrl, weather }) => {
     addNewClothingItem(name, imageUrl, weather)
@@ -137,7 +153,6 @@ function App() {
           </Routes>
           <Footer />
           <AddItemModal
-            activeModal={activeModal}
             handleCloseClick={closeActiveModal}
             isOpen={activeModal === "add-garment"}
             onAddItemModalSubmit={handleAddItemModalSubmit}
