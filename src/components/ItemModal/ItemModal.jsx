@@ -1,14 +1,10 @@
-const ItemModal = ({ activeModal, card, onDeleteClick, handleCloseClick }) => {
+const ItemModal = ({ isOpen, card, onDeleteClick, handleCloseClick }) => {
   const handleDeleteClick = () => {
     onDeleteClick(card);
   };
 
   return (
-    <div
-      className={`item-modal ${
-        activeModal === "card-preview" && "item-modal_opened"
-      }`}
-    >
+    <div className={`item-modal ${isOpen && "item-modal_opened"}`}>
       <div className="item-modal__container">
         {card?.imageUrl && (
           <img

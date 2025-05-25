@@ -143,7 +143,7 @@ function App() {
             onAddItemModalSubmit={handleAddItemModalSubmit}
           />
           <ItemModal
-            activeModal={activeModal}
+            isOpen={activeModal === "card-preview"}
             card={selectedCard}
             onDeleteClick={handleConfirmDelete}
             handleCloseClick={closeActiveModal}
