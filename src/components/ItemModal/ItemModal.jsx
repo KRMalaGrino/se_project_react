@@ -1,4 +1,8 @@
 const ItemModal = ({ activeModal, card, onDeleteClick, handleCloseClick }) => {
+  const handleDeleteClick = () => {
+    onDeleteClick(card);
+  };
+
   return (
     <div
       className={`item-modal ${
@@ -15,13 +19,15 @@ const ItemModal = ({ activeModal, card, onDeleteClick, handleCloseClick }) => {
         )}
         <div className="item-modal__lower-wrapper">
           <div className="item-modal__text-wrapper">
-            <p className="item-modal__title">{card.name}</p>
-            <p className="item-modal__weather">Weather: {card.weather}</p>
+            <p className="item-modal__title">{card?.name || ""}</p>
+            <p className="item-modal__weather">
+              Weather: {card?.weather || ""}
+            </p>
           </div>
           <button
             className="item-modal__delete-btn"
             type="button"
-            onClick={onDeleteClick}
+            onClick={handleDeleteClick}
           >
             Delete item
           </button>

@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "_id": 11,
-      "name": "Shorts",
-      "weather": "Hot",
-      "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Shorts.png?etag=d728c496643f610de8d8fea92dd915ba"
-    },
-    {
       "_id": 12,
       "name": "Skirt",
       "weather": "hot",
@@ -25,22 +19,10 @@
       "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Sunglasses.png?etag=a1bced9e331d36cb278c45df51150432"
     },
     {
-      "_id": 15,
-      "name": "Sweatshirt",
-      "weather": "warm",
-      "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Sweatshirt.png?etag=008a9674757bea2e0bdb31242e364be0"
-    },
-    {
-      "_id": 17
-    },
-    {
       "_id": 18
     },
     {
       "_id": 19
-    },
-    {
-      "_id": 20
     },
     {
       "_id": 21
@@ -50,12 +32,6 @@
     },
     {
       "_id": 23
-    },
-    {
-      "name": "xzxasx",
-      "imageUrl": "https://www.converse.com/dw/image/v2/BCZC_PRD/on/demandware.static/-/Sites-cnv-master-catalog/default/dw96b25583/images/a_107/A04697C_A_107X1.jpg?sw=964",
-      "weather": "warm",
-      "_id": 24
     },
     {
       "name": "new sneaker 2",

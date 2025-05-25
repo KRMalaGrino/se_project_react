@@ -29,7 +29,7 @@ function App() {
   });
   const [clothingItems, setClothingItems] = useState([]);
   const [activeModal, setActiveModal] = useState("");
-  const [selectedCard, setSelectedCard] = useState({});
+  const [selectedCard, setSelectedCard] = useState(null);
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
 
   // toggle switch context F to C
@@ -82,7 +82,8 @@ function App() {
   };
 
   // Click Confirm Delete Modal
-  const handleConfirmDelete = () => {
+  const handleConfirmDelete = (card) => {
+    setSelectedCard(card);
     setActiveModal("confirm-delete");
   };
 
@@ -144,7 +145,7 @@ function App() {
           <ItemModal
             activeModal={activeModal}
             card={selectedCard}
-            onDeleteClick={() => handleConfirmDelete(selectedCard)}
+            onDeleteClick={handleConfirmDelete}
             handleCloseClick={closeActiveModal}
           />
           <ConfirmDeleteModal
