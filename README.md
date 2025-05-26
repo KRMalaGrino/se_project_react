@@ -14,5 +14,5 @@ This website / application for the computer or phone recommends the user what to
 
 This project is deployed on GitHub Pages:
  
-------------------------
+https://github.com/KRMalaGrino/se_project_react
 
