@@ -12,7 +12,7 @@ This was my first react project . Most of the project consists of react jsx alon
 
 ## Pictures, GIFs, & screenshots
  
-------------------------
+https://drive.google.com/file/d/1oTgayC0XJAMyiY-F9K4zJnzmUAM0a2ZD/view?usp=drive_link
 
 ## Deployment
 
