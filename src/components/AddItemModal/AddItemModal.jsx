@@ -1,7 +1,5 @@
 import { useState } from "react";
 
-// import useFormValidation from "../../utils/validation.js";
-
 import ModalWithForm from "../ModalWithForm/ModalWithForm.jsx";
 
 const AddItemModal = ({ handleCloseClick, isOpen, onAddItemModalSubmit }) => {
