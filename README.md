@@ -4,7 +4,7 @@ This website / application for the computer or phone recommends the user what to
 
 ## Functionality & Technology
 
-This was my first react project . Most of the project consists of react jsx along with java script , css and html of course . 
+This was my first react project . Most of the project consists of react jsx along with java script , css and html of course . According to the figma design we developed the layouts, typographies and other important details . VSCode was the coding application used .
 
 ## Pictures, GIFs, & screenshots
  
