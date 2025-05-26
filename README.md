@@ -12,11 +12,11 @@ This was my first react project . Most of the project consists of react jsx alon
 
 ## Pictures, GIFs, & screenshots
  
-https://drive.google.com/file/d/1oTgayC0XJAMyiY-F9K4zJnzmUAM0a2ZD/view?usp=drive_link
+- https://drive.google.com/file/d/1oTgayC0XJAMyiY-F9K4zJnzmUAM0a2ZD/view?usp=drive_link
 
 ## Deployment
 
 This project is deployed on GitHub Pages:
  
-https://krmalagrino.github.io/se_project_react/
+- https://krmalagrino.github.io/se_project_react/
 
