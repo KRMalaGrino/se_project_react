@@ -26,4 +26,15 @@ function signin(email, password) {
   }).then(handleResponse);
 }
 
-export { handleResponse, signup, signin };
+// check token validity
+function checkTokenValidity(token) {
+  return fetch(`${baseUrl}/users/me`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      authorization: `Bearer ${token}`,
+    },
+  }).then(handleResponse);
+}
+
+export { handleResponse, signup, signin, checkTokenValidity };

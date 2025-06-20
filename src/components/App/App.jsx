@@ -170,7 +170,17 @@ function App() {
   useEffect(() => {
     const token = localStorage.getItem("jwt");
     if (token) {
-      setIsLoggedIn(true);
+      auth
+        .checkTokenValidity(token)
+        .then((user) => {
+          setIsLoggedIn(true);
+          setUserData({ username: user.name, email: user.email });
+        })
+        .catch((err) => {
+          console.error("Token invalid or expired", err);
+          setIsLoggedIn(false);
+          localStorage.removeItem("jwt");
+        });
     } else {
       setIsLoggedIn(false);
     }
