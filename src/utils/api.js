@@ -1,10 +1,6 @@
 const baseUrl = "http://localhost:3001";
 const baseHeader = { "Content-Type": "application/json" };
 
-// function getAppInfo() {
-//   return Promise.all([]);
-// }
-
 function handleResponse(res) {
   if (res.ok) {
     return res.json();
