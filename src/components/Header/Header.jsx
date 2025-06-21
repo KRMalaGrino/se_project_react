@@ -9,7 +9,6 @@ import CurrentUserContext from "../../contexts/CurrentUserContext"; // Current U
 const Header = ({ onAddClick, weatherData, isLoggedIn }) => {
   const { currentUser } = useContext(CurrentUserContext);
 
-  const userName = "Ryan Malagrino"; // UserName
   // Current Date
   const currentDate = () =>
     new Date().toLocaleString("default", { month: "long", day: "numeric" });

@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import CurrentUserContext from "../../contexts/CurrentUserContext.jsx";
+import CurrentUserContext from "../../../contexts/CurrentUserContext.jsx";
 
 import ItemCard from "../../ItemCard/ItemCard.jsx";
 
