@@ -73,6 +73,21 @@
   border-radius: 50%;
 }
 
+.header__avatar-fallback {
+  margin: auto;
+
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.header__auth-link {
+  margin-left: 16px;
+  color: #0077cc;
+  text-decoration: none;
+  font-weight: bold;
+}
+
 @media screen and (max-width: 627px) {
   .header {
     flex-wrap: wrap;
