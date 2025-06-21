@@ -29,6 +29,7 @@ import AddItemModal from "../AddItemModal/AddItemModal.jsx";
 import ConfirmDeleteModal from "../ConfirmDeleteModal/ConfirmDeleteModal.jsx";
 import RegisterModal from "../RegisterModal/RegisterModal.jsx";
 import LoginModal from "../LoginModal/LoginModal.jsx";
+import EditProfileModal from "../EditProfileModal/EditProfileModal.jsx";
 
 function App() {
   // all use states
@@ -137,6 +138,18 @@ function App() {
       .then((user) => {
         setUserData({ username: user.name, email: user.email });
         navigate("/profile");
+      })
+      .catch(console.error);
+  };
+
+  // edit profile
+  const handleEditProfileSubmit = ({ name, avatar }) => {
+    const token = localStorage.getItem("jwt");
+    auth
+      .editProfile(token, name, avatar)
+      .then((updatedUser) => {
+        setUserData({ username: updatedUser.name, email: updatedUser.email });
+        closeActiveModal();
       })
       .catch(console.error);
   };
@@ -258,6 +271,11 @@ function App() {
               isOpen={activeModal === "login"}
               handleCloseClick={closeActiveModal}
               handleLogin={handleLogin}
+            />
+            <EditProfileModal
+              isOpen={activeModal === "edit-profile"}
+              handleCloseClick={closeActiveModal}
+              handleEditProfileSubmit={handleEditProfileSubmit}
             />
           </div>
         </div>

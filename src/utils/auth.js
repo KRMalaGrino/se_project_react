@@ -31,10 +31,22 @@ function checkTokenValidity(token) {
   return fetch(`${baseUrl}/users/me`, {
     method: "GET",
     headers: {
-      "Content-Type": "application/json",
-      authorization: `Bearer ${token}`,
+      ...baseHeader,
+      Authorization: `Bearer ${token}`,
     },
   }).then(handleResponse);
 }
 
-export { handleResponse, signup, signin, checkTokenValidity };
+// edit profile
+function editProfile(token, name, avatar) {
+  return fetch(`${baseUrl}/users/me`, {
+    method: "PATCH",
+    headers: {
+      ...baseHeader,
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify({ name, avatar }),
+  }).then(handleResponse);
+}
+
+export { handleResponse, signup, signin, checkTokenValidity, editProfile };
