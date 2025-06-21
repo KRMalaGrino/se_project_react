@@ -124,6 +124,7 @@ function App() {
     }
   };
 
+  // handle login
   const handleLogin = ({ email, password }) => {
     auth
       .login(email, password)
