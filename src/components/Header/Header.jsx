@@ -6,7 +6,13 @@ import ToggleSwitch from "../ToggleSwitch/ToggleSwitch"; // Toggle Switch
 import CurrentUserContext from "../../contexts/CurrentUserContext"; // Current User Context
 
 // Add Clothes Button & Header return
-const Header = ({ onAddClick, weatherData, isLoggedIn }) => {
+const Header = ({
+  onAddClick,
+  weatherData,
+  isLoggedIn,
+  onLoginClick,
+  onRegisterClick,
+}) => {
   const { currentUser } = useContext(CurrentUserContext);
 
   // Current Date
@@ -55,12 +61,12 @@ const Header = ({ onAddClick, weatherData, isLoggedIn }) => {
           </>
         ) : (
           <>
-            <Link to="/signin" className="header__auth-link">
+            <button onClick={onLoginClick} className="header__auth-link">
               Sign In
-            </Link>
-            <Link to="/signup" className="header__auth-link">
+            </button>
+            <button onClick={onRegisterClick} className="header__auth-link">
               Register
-            </Link>
+            </button>
           </>
         )}
       </div>

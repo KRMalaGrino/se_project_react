@@ -5,11 +5,6 @@ import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 // utils imports
 import { coordinates, APIkey } from "../../utils/constants.js";
 import { getWeather, filterWeatherData } from "../../utils/weatherApi.js";
-import {
-  getClothingItems,
-  addNewClothingItem,
-  deleteClothingItem,
-} from "../../utils/api.js";
 import * as auth from "../../utils/auth.js";
 import * as api from "../../utils/api.js";
 
@@ -57,6 +52,21 @@ function App() {
     setCurrentTemperatureUnit(currentTemperatureUnit === "F" ? "C" : "F");
   };
 
+  // open Register Modal
+  const openRegisterModal = () => {
+    setActiveModal("register");
+  };
+
+  // open Login Modal
+  const openLoginModal = () => {
+    setActiveModal("login");
+  };
+
+  // open edit profile modal
+  const openEditProfileModal = () => {
+    setActiveModal("edit-profile");
+  };
+
   // Click Add Clothes
   const handleAddClick = () => {
     setActiveModal("add-garment");
@@ -75,7 +85,7 @@ function App() {
 
   // Add Clothing Item Modal Submission
   const handleAddItemModalSubmit = ({ name, imageUrl, weather }) => {
-    const token = getToken();
+    const token = auth.getToken();
     addNewClothingItem(name, imageUrl, weather, token)
       .then((newItem) => {
         // add new clothing item
@@ -90,7 +100,7 @@ function App() {
 
   // Click delete item button
   const handleDeleteItem = (_id) => {
-    const token = getToken();
+    const token = auth.getToken();
     deleteClothingItem(_id, token)
       .then(() => {
         setClothingItems((prevItems) =>
@@ -146,7 +156,7 @@ function App() {
 
   // edit profile
   const handleEditProfileSubmit = ({ name, avatar }) => {
-    const token = getToken();
+    const token = auth.getToken();
     auth
       .editProfile(token, name, avatar)
       .then((updatedUser) => {
@@ -158,7 +168,7 @@ function App() {
 
   // card likes and dislikes
   const handleCardLike = ({ id, isLiked }) => {
-    const token = getToken();
+    const token = auth.getToken();
     // check if this card is not currently liked
     !isLiked
       ? api
@@ -207,7 +217,8 @@ function App() {
 
   // use effect for getting clothing items
   useEffect(() => {
-    getClothingItems()
+    api
+      .getClothingItems()
       .then((data) => {
         setClothingItems(data);
       })
@@ -216,7 +227,7 @@ function App() {
 
   // use effect for checking if user is logged in
   useEffect(() => {
-    const token = getToken();
+    const token = auth.getToken();
     if (token) {
       auth
         .checkTokenValidity(token)
@@ -245,6 +256,8 @@ function App() {
               onAddClick={handleAddClick}
               weatherData={weatherData}
               isLoggedIn={isLoggedIn}
+              onLoginClick={openLoginModal}
+              onRegisterClick={openRegisterModal}
             />
             <Routes>
               <Route
