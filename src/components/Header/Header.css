@@ -84,10 +84,13 @@
 .header__auth-link {
   margin-left: 16px;
   color: black;
+  border: none;
 
   text-decoration: none;
   font-family: "Cabinet Grotesk", sans-serif;
   font-size: 20px;
+
+  cursor: pointer;
 }
 
 @media screen and (max-width: 627px) {

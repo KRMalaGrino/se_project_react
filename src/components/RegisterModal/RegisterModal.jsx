@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import ModalWithForm from "../ModalWithForm/ModalWithForm.jsx";
 
-const RegisterModal = ({ handleCloseClick, isOpen, handleRegister }) => {
+const RegisterModal = ({ handleCloseClick, isOpen, handleRegistration }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
@@ -27,7 +27,7 @@ const RegisterModal = ({ handleCloseClick, isOpen, handleRegister }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // handle register submission
-    handleRegister({ email, password, name, avatarUrl });
+    handleRegistration({ email, password, name, avatarUrl });
     // empty the inputs
     setEmail("");
     setPassword("");
