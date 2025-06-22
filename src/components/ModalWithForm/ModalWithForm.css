@@ -113,6 +113,14 @@
   visibility: visible;
 }
 
+.modal-with-form__submit-error {
+  margin: 10px 0 0;
+  display: block;
+
+  color: red;
+  font-size: 14px;
+}
+
 .modal-with-form__radio-input {
   margin: 0 8px 0 0;
 }

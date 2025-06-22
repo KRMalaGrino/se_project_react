@@ -2,7 +2,12 @@ import { useState } from "react";
 
 import ModalWithForm from "../ModalWithForm/ModalWithForm.jsx";
 
-const RegisterModal = ({ handleCloseClick, isOpen, handleRegistration }) => {
+const RegisterModal = ({
+  isOpen,
+  handleRegistration,
+  handleCloseClick,
+  error,
+}) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
@@ -113,6 +118,9 @@ const RegisterModal = ({ handleCloseClick, isOpen, handleRegistration }) => {
         <span className="modal-with-form__error" id="register-avatar-url-error">
           Please enter a valid URL.
         </span>
+        {error && (
+          <span className="modal-with-form__submit-error">{error}</span>
+        )}
       </label>
     </ModalWithForm>
   );

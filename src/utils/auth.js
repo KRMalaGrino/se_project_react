@@ -9,15 +9,21 @@ function handleResponse(res) {
   if (res.ok) {
     return res.json();
   }
-  return Promise.reject(`Error: ${res.status}`);
+  return res.json().then((data) => {
+    const error = {
+      status: res.status,
+      message: data.message || "Something went wrong",
+    };
+    return Promise.reject(error);
+  });
 }
 
 // signup
-function signup(name, avatar, email, password) {
+function signup(email, password, name, avatar) {
   return fetch(`${baseUrl}/signup`, {
     method: "POST",
     headers: baseHeader,
-    body: JSON.stringify({ name, avatar, email, password }),
+    body: JSON.stringify({ email, password, name, avatar }),
   }).then(handleResponse);
 }
 

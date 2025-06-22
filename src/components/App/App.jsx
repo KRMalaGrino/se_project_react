@@ -42,6 +42,7 @@ function App() {
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
   const [userData, setUserData] = useState({ username: "", email: "" });
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [registerError, setRegisterError] = useState("");
 
   // imported use states
   const navigate = useNavigate();
@@ -120,27 +121,27 @@ function App() {
   };
 
   // handle register
-  const handleRegistration = ({
-    email,
-    password,
-    confirmPassword,
-    name,
-    avatarUrl,
-  }) => {
-    if (password === confirmPassword) {
-      auth
-        .register(email, password, name, avatarUrl)
-        .then(() => {
-          navigate("/login");
-        })
-        .catch(console.error);
-    }
+  const handleRegistration = ({ email, password, name, avatarUrl }) => {
+    setRegisterError("");
+    auth
+      .signup(email, password, name, avatarUrl)
+      .then(() => {
+        closeActiveModal();
+        navigate("/signin");
+      })
+      .catch((err) => {
+        if (err.message === 409) {
+          setRegisterError("User with this email already exists.");
+        } else {
+          setRegisterError("Registration failed. Please try again.");
+        }
+      });
   };
 
   // handle login
   const handleLogin = ({ email, password }) => {
     auth
-      .login(email, password)
+      .signin(email, password)
       .then((loginData) => {
         localStorage.setItem("jwt", loginData.token);
         setIsLoggedIn(true);
@@ -304,7 +305,11 @@ function App() {
             <RegisterModal
               isOpen={activeModal === "register"}
               handleRegistration={handleRegistration}
-              handleCloseClick={closeActiveModal}
+              handleCloseClick={() => {
+                closeActiveModal();
+                setRegisterError("");
+              }}
+              error={registerError}
             />
             <LoginModal
               isOpen={activeModal === "login"}

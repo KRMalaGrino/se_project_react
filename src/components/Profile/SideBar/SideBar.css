@@ -8,6 +8,9 @@
   width: max-content;
 }
 
+.sideBar__wrapper-top {
+}
+
 .sideBar__avatar {
   margin: 0;
 
@@ -16,13 +19,16 @@
   border-radius: 50%;
 }
 
-.sideBar__userName {
+.sideBar__text {
   margin: 0;
   padding: 0 0 0 16px;
 
   font-family: "Cabinet Grotesk";
   font-size: 20px;
   line-height: 100%;
+}
+
+.sideBar__wrapper-bottom {
 }
 
 @media screen and (max-width: 627px) {
