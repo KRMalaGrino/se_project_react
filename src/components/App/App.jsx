@@ -11,6 +11,7 @@ import {
   deleteClothingItem,
 } from "../../utils/api.js";
 import * as auth from "../../utils/auth.js";
+import * as api from "../../utils/api.js";
 
 // context imports
 import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext.jsx";
@@ -47,6 +48,7 @@ function App() {
   const [userData, setUserData] = useState({ username: "", email: "" });
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
+  // imported use states
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -73,7 +75,7 @@ function App() {
 
   // Add Clothing Item Modal Submission
   const handleAddItemModalSubmit = ({ name, imageUrl, weather }) => {
-    const token = localStorage.getItem("jwt");
+    const token = getToken();
     addNewClothingItem(name, imageUrl, weather, token)
       .then((newItem) => {
         // add new clothing item
@@ -88,7 +90,7 @@ function App() {
 
   // Click delete item button
   const handleDeleteItem = (_id) => {
-    const token = localStorage.getItem("jwt");
+    const token = getToken();
     deleteClothingItem(_id, token)
       .then(() => {
         setClothingItems((prevItems) =>
@@ -144,7 +146,7 @@ function App() {
 
   // edit profile
   const handleEditProfileSubmit = ({ name, avatar }) => {
-    const token = localStorage.getItem("jwt");
+    const token = getToken();
     auth
       .editProfile(token, name, avatar)
       .then((updatedUser) => {
@@ -152,6 +154,29 @@ function App() {
         closeActiveModal();
       })
       .catch(console.error);
+  };
+
+  // card likes and dislikes
+  const handleCardLike = ({ id, isLiked }) => {
+    const token = getToken();
+    // check if this card is not currently liked
+    !isLiked
+      ? api
+          .addCardLike(id, token)
+          .then((updatedCard) => {
+            setClothingItems((cards) =>
+              cards.map((item) => (item._id === id ? updatedCard : item))
+            );
+          })
+          .catch((err) => console.log(err))
+      : api
+          .removeCardLike(id, token)
+          .then((updatedCard) => {
+            setClothingItems((cards) =>
+              cards.map((item) => (item._id === id ? updatedCard : item))
+            );
+          })
+          .catch((err) => console.log(err));
   };
 
   // Escape key close modal
@@ -191,7 +216,7 @@ function App() {
 
   // use effect for checking if user is logged in
   useEffect(() => {
-    const token = localStorage.getItem("jwt");
+    const token = getToken();
     if (token) {
       auth
         .checkTokenValidity(token)
@@ -229,6 +254,7 @@ function App() {
                     weatherData={weatherData}
                     onCardClick={handleCardClick}
                     clothingItems={clothingItems}
+                    onCardLike={handleCardLike}
                   />
                 }
               />

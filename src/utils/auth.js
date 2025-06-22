@@ -1,6 +1,10 @@
 const baseUrl = "http://localhost:3001";
 const baseHeader = { "Content-Type": "application/json" };
 
+function getToken() {
+  return localStorage.getItem("jwt");
+}
+
 function handleResponse(res) {
   if (res.ok) {
     return res.json();
@@ -49,4 +53,11 @@ function editProfile(token, name, avatar) {
   }).then(handleResponse);
 }
 
-export { handleResponse, signup, signin, checkTokenValidity, editProfile };
+export {
+  getToken,
+  handleResponse,
+  signup,
+  signin,
+  checkTokenValidity,
+  editProfile,
+};
