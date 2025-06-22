@@ -1,7 +1,7 @@
 .sideBar {
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
 
   margin: 0 116px 0 0;
   padding: 0;
@@ -9,6 +9,9 @@
 }
 
 .sideBar__wrapper-top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .sideBar__avatar {
@@ -19,7 +22,7 @@
   border-radius: 50%;
 }
 
-.sideBar__text {
+.sideBar__username {
   margin: 0;
   padding: 0 0 0 16px;
 
@@ -29,6 +32,23 @@
 }
 
 .sideBar__wrapper-bottom {
+  padding: 24px 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.sideBar__button {
+  margin: 0;
+  padding: 0;
+  border: none;
+
+  font-family: "Cabinet Grotesk";
+  font-size: 20px;
+  line-height: 100%;
+
+  cursor: pointer;
 }
 
 @media screen and (max-width: 627px) {

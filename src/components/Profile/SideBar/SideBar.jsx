@@ -11,11 +11,15 @@ const SideBar = () => {
           src={avatar}
           alt={`${userName}'s avatar`}
         />
-        <p className="sideBar__text">{userName}</p>
+        <p className="sideBar__username">{userName}</p>
       </div>
       <div className="sideBar__wrapper-bottom">
-        <p className="sideBar__text">Change profile data</p>
-        <p className="sideBar__text">Log out</p>
+        <button type="button" className="sideBar__button">
+          Change profile data
+        </button>
+        <button type="button" className="sideBar__button">
+          Log out
+        </button>
       </div>
     </div>
   );
