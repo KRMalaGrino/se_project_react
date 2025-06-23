@@ -92,7 +92,8 @@ function App() {
   // Add Clothing Item Modal Submission
   const handleAddItemModalSubmit = ({ name, imageUrl, weather }) => {
     const token = auth.getToken();
-    addNewClothingItem(name, imageUrl, weather, token)
+    api
+      .addNewClothingItem(name, imageUrl, weather, token)
       .then((newItem) => {
         // add new clothing item
         setClothingItems((prevItems) => [newItem, ...prevItems]);
@@ -107,7 +108,8 @@ function App() {
   // Click delete item button
   const handleDeleteItem = (_id) => {
     const token = auth.getToken();
-    deleteClothingItem(_id, token)
+    api
+      .deleteClothingItem(_id, token)
       .then(() => {
         setClothingItems((prevItems) =>
           prevItems.filter((item) => item._id !== _id)
