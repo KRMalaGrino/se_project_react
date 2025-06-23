@@ -14,18 +14,18 @@ function getClothingItems() {
   }).then(handleResponse);
 }
 
-function addNewClothingItem(name, imageUrl, weather) {
+function addNewClothingItem(name, imageUrl, weather, token) {
   return fetch(`${baseUrl}/items`, {
     method: "POST",
-    headers: baseHeader,
+    headers: { ...baseHeader, Authorization: `Bearer ${token}` },
     body: JSON.stringify({ name, imageUrl, weather }),
   }).then(handleResponse);
 }
 
-function deleteClothingItem(_id) {
+function deleteClothingItem(_id, token) {
   return fetch(`${baseUrl}/items/${_id}`, {
     method: "DELETE",
-    headers: baseHeader,
+    headers: { ...baseHeader, Authorization: `Bearer ${token}` },
   }).then(handleResponse);
 }
 

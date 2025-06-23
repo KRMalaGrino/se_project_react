@@ -64,6 +64,7 @@ function App() {
     setActiveModal("login");
   };
 
+  // open Logout Modal
   const openLogoutModal = () => {
     setActiveModal("logout");
   };
