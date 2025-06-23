@@ -3,8 +3,13 @@ import CurrentUserContext from "../../../contexts/CurrentUserContext.jsx";
 
 import ItemCard from "../../ItemCard/ItemCard.jsx";
 
-const ClothesSection = ({ onAddClick, onCardClick, clothingItems }) => {
-  const currentUser = useContext(CurrentUserContext);
+const ClothesSection = ({
+  onAddClick,
+  onCardClick,
+  clothingItems,
+  onCardLike,
+}) => {
+  const { currentUser } = useContext(CurrentUserContext);
 
   const userItems = clothingItems.filter(
     (item) => item.owner === currentUser._id
@@ -23,11 +28,15 @@ const ClothesSection = ({ onAddClick, onCardClick, clothingItems }) => {
         </button>
       </div>
       <ul className="clothesSection__list">
-        {userItems.map((item) => {
-          return (
-            <ItemCard key={item._id} item={item} onCardClick={onCardClick} /> // pass onCardClick as prop
-          );
-        })}
+        {userItems.map((item) => (
+          <li key={item._id} className="clothesSection__card">
+            <ItemCard
+              item={item}
+              onCardClick={onCardClick}
+              onCardLike={onCardLike}
+            />
+          </li>
+        ))}
       </ul>
     </div>
   );

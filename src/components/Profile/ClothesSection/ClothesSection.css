@@ -38,6 +38,9 @@
   list-style-type: none;
 }
 
+/* .clothesSection__card {
+} */
+
 @media screen and (max-width: 627px) {
   .clothesSection {
     align-items: center;

@@ -29,9 +29,25 @@ function deleteClothingItem(_id, token) {
   }).then(handleResponse);
 }
 
+function addCardLike(id, token) {
+  return fetch(`${baseUrl}/items/${id}/likes`, {
+    method: "PUT",
+    headers: { ...baseHeader, Authorization: `Bearer ${token}` },
+  }).then(handleResponse);
+}
+
+function removeCardLike(id, token) {
+  return fetch(`${baseUrl}/items/${id}/likes`, {
+    method: "DELETE",
+    headers: { ...baseHeader, Authorization: `Bearer ${token}` },
+  }).then(handleResponse);
+}
+
 export {
   handleResponse,
   getClothingItems,
   addNewClothingItem,
   deleteClothingItem,
+  addCardLike,
+  removeCardLike,
 };

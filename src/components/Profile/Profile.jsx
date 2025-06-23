@@ -7,6 +7,7 @@ const Profile = ({
   clothingItems,
   openEditProfileClick,
   openLogoutModal,
+  onCardLike,
 }) => {
   return (
     <div className="profile">
@@ -21,6 +22,7 @@ const Profile = ({
           onAddClick={onAddClick}
           onCardClick={onCardClick}
           clothingItems={clothingItems}
+          onCardLike={onCardLike}
         />
       </section>
     </div>

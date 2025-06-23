@@ -157,7 +157,7 @@ function App() {
         return auth.getUserInfo(loginData.token);
       })
       .then((user) => {
-        setUserData({ username: user.name, email: user.email });
+        setUserData({ _id: user._id, username: user.name, email: user.email });
         navigate("/profile");
       })
       .catch(console.error);
@@ -176,7 +176,11 @@ function App() {
     auth
       .editProfile(token, name, avatar)
       .then((updatedUser) => {
-        setUserData({ username: updatedUser.name, email: updatedUser.email });
+        setUserData({
+          _id: user._id,
+          username: updatedUser.name,
+          email: updatedUser.email,
+        });
         closeActiveModal();
       })
       .catch(console.error);
@@ -249,7 +253,11 @@ function App() {
         .checkTokenValidity(token)
         .then((user) => {
           setIsLoggedIn(true);
-          setUserData({ username: user.name, email: user.email });
+          setUserData({
+            _id: user._id,
+            username: user.name,
+            email: user.email,
+          });
         })
         .catch((err) => {
           console.error("Token invalid or expired", err);
@@ -297,6 +305,7 @@ function App() {
                       clothingItems={clothingItems}
                       openEditProfileClick={openEditProfileModal}
                       openLogoutModal={openLogoutModal}
+                      onCardLike={handleCardLike}
                     />
                   </ProtectedRoute>
                 }
