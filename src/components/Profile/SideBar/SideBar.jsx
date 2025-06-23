@@ -1,6 +1,6 @@
 import avatar from "../../../images/avatar.jpg"; // Avatar
 
-const SideBar = () => {
+const SideBar = ({ openEditProfileClick, openLogoutModal }) => {
   const userName = "Ryan Malagrino"; // UserName
 
   return (
@@ -14,10 +14,18 @@ const SideBar = () => {
         <p className="sideBar__username">{userName}</p>
       </div>
       <div className="sideBar__wrapper-bottom">
-        <button type="button" className="sideBar__button">
+        <button
+          onClick={openEditProfileClick}
+          type="button"
+          className="sideBar__button"
+        >
           Change profile data
         </button>
-        <button type="button" className="sideBar__button">
+        <button
+          onClick={openLogoutModal}
+          type="button"
+          className="sideBar__button"
+        >
           Log out
         </button>
       </div>

@@ -1,11 +1,20 @@
 import SideBar from "./SideBar/SideBar.jsx";
 import ClothesSection from "./ClothesSection/ClothesSection.jsx";
 
-const Profile = ({ onAddClick, onCardClick, clothingItems }) => {
+const Profile = ({
+  onAddClick,
+  onCardClick,
+  clothingItems,
+  openEditProfileClick,
+  openLogoutModal,
+}) => {
   return (
     <div className="profile">
       <section className="profile__sideBar">
-        <SideBar />
+        <SideBar
+          openEditProfileClick={openEditProfileClick}
+          openLogoutModal={openLogoutModal}
+        />
       </section>
       <section className="profile__clothesSection">
         <ClothesSection

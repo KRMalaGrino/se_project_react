@@ -25,6 +25,7 @@ import AddItemModal from "../AddItemModal/AddItemModal.jsx";
 import ConfirmDeleteModal from "../ConfirmDeleteModal/ConfirmDeleteModal.jsx";
 import RegisterModal from "../RegisterModal/RegisterModal.jsx";
 import LoginModal from "../LoginModal/LoginModal.jsx";
+import LogOutModal from "../LogOutModal/LogOutModal.jsx";
 import EditProfileModal from "../EditProfileModal/EditProfileModal.jsx";
 
 function App() {
@@ -61,6 +62,10 @@ function App() {
   // open Login Modal
   const openLoginModal = () => {
     setActiveModal("login");
+  };
+
+  const openLogoutModal = () => {
+    setActiveModal("logout");
   };
 
   // open edit profile modal
@@ -153,6 +158,13 @@ function App() {
         navigate("/profile");
       })
       .catch(console.error);
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("jwt");
+    setIsLoggedIn(false);
+    closeActiveModal("logout");
+    navigate("/");
   };
 
   // edit profile
@@ -280,6 +292,8 @@ function App() {
                       onAddClick={handleAddClick}
                       onCardClick={handleCardClick}
                       clothingItems={clothingItems}
+                      openEditProfileClick={openEditProfileModal}
+                      openLogoutModal={openLogoutModal}
                     />
                   </ProtectedRoute>
                 }
@@ -315,6 +329,11 @@ function App() {
               isOpen={activeModal === "login"}
               handleCloseClick={closeActiveModal}
               handleLogin={handleLogin}
+            />
+            <LogOutModal
+              isOpen={activeModal === "logout"}
+              handleLogout={handleLogout}
+              handleCloseClick={closeActiveModal}
             />
             <EditProfileModal
               isOpen={activeModal === "edit-profile"}
