@@ -51,6 +51,25 @@
   cursor: pointer;
 }
 
+.sidebar__avatar {
+  margin: auto;
+
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.sidebar__avatar-fallback {
+  margin: auto;
+
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+
+  text-decoration: none;
+  text-align: center;
+}
+
 @media screen and (max-width: 627px) {
   .sideBar {
     margin: 0;

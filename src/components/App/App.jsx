@@ -176,11 +176,11 @@ function App() {
     auth
       .editProfile(token, name, avatar)
       .then((updatedUser) => {
-        setUserData({
-          _id: user._id,
+        setUserData((prevUser) => ({
+          ...prevUser,
           username: updatedUser.name,
-          email: updatedUser.email,
-        });
+          avatar: updatedUser.avatar,
+        }));
         closeActiveModal();
       })
       .catch(console.error);

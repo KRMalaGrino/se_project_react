@@ -20,7 +20,7 @@ const EditProfileModal = ({
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    handleEditProfileSubmit({ name, avatar });
+    handleEditProfileSubmit({ name: nameInput, avatar: avatarInput });
     setName("");
     setAvatarUrl("");
   };

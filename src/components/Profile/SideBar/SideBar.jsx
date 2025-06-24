@@ -1,17 +1,28 @@
-import avatar from "../../../images/avatar.jpg"; // Avatar
+import { useContext } from "react";
+import CurrentUserContext from "../../../contexts/CurrentUserContext";
 
 const SideBar = ({ openEditProfileClick, openLogoutModal }) => {
-  const userName = "Ryan Malagrino"; // UserName
+  const { currentUser } = useContext(CurrentUserContext);
+
+  const renderAvatar = () => {
+    if (currentUser?.avatar) {
+      return (
+        <img
+          className="sidebar__avatar"
+          src={currentUser.avatar}
+          alt={`${currentUser.name}'s avatar`}
+        />
+      );
+    }
+    const firstLetter = currentUser?.name?.charAt(0).toUpperCase() || "?";
+    return <div className="sidebar__avatar-fallback">{firstLetter}</div>;
+  };
 
   return (
     <div className="sideBar">
       <div className="sideBar__wrapper-top">
-        <img
-          className="sideBar__avatar"
-          src={avatar}
-          alt={`${userName}'s avatar`}
-        />
-        <p className="sideBar__username">{userName}</p>
+        {renderAvatar()}
+        <p className="sideBar__username">{currentUser.userName}</p>
       </div>
       <div className="sideBar__wrapper-bottom">
         <button
