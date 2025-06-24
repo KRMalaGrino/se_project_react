@@ -29,7 +29,7 @@ const Header = ({
         />
       );
     }
-    const firstLetter = currentUser?.name?.charAt(0).toUpperCase() || "?";
+    const firstLetter = currentUser?.username?.charAt(0).toUpperCase() || "?";
     return <div className="header__avatar-fallback">{firstLetter}</div>;
   };
 
@@ -55,9 +55,11 @@ const Header = ({
               + Add Clothes
             </button>
             <Link to="/profile" className="header__username">
-              {currentUser.name}
+              {currentUser.username}
             </Link>
-            <Link to="/profile">{renderAvatar()}</Link>
+            <Link to="/profile" className="header__avatar-fallback">
+              {renderAvatar()}
+            </Link>
           </>
         ) : (
           <>

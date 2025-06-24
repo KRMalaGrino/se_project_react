@@ -8,7 +8,7 @@ const ItemModal = ({ isOpen, card, onDeleteClick, handleCloseClick }) => {
     onDeleteClick(card);
   };
 
-  const isOwner = card?.owner === currentUser?._id;
+  const isOwner = name?.owner === currentUser?._id;
 
   return (
     <div className={`item-modal ${isOpen && "item-modal_opened"}`}>

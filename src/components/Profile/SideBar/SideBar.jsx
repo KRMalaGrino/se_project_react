@@ -14,7 +14,7 @@ const SideBar = ({ openEditProfileClick, openLogoutModal }) => {
         />
       );
     }
-    const firstLetter = currentUser?.name?.charAt(0).toUpperCase() || "?";
+    const firstLetter = currentUser?.username?.charAt(0).toUpperCase() || "?";
     return <div className="sidebar__avatar-fallback">{firstLetter}</div>;
   };
 
@@ -22,7 +22,7 @@ const SideBar = ({ openEditProfileClick, openLogoutModal }) => {
     <div className="sideBar">
       <div className="sideBar__wrapper-top">
         {renderAvatar()}
-        <p className="sideBar__username">{currentUser.userName}</p>
+        <p className="sideBar__username">{currentUser.username}</p>
       </div>
       <div className="sideBar__wrapper-bottom">
         <button
