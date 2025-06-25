@@ -6,7 +6,7 @@ This website / application for the computer or phone recommends the user what to
 
 This was my first react project . Most of the project consists of react jsx along with java script , css and html of course . According to the figma design we developed the layouts, typographies and other important details . VSCode was the coding application used .
 
-## Backend link
+**Backend link**
 
 (git clone) https://github.com/KRMalaGrino/se_project_express
 
