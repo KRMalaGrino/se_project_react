@@ -166,6 +166,8 @@ function App() {
   const handleLogout = () => {
     localStorage.removeItem("jwt");
     setIsLoggedIn(false);
+    setUserData({ username: "", email: "" });
+    setClothingItems([]);
     closeActiveModal("logout");
     navigate("/");
   };
@@ -237,13 +239,19 @@ function App() {
 
   // use effect for getting clothing items
   useEffect(() => {
+    if (!isLoggedIn) {
+      setClothingItems([]);
+      return;
+    }
+
+    const token = auth.getToken();
     api
-      .getClothingItems()
+      .getClothingItems(token)
       .then((data) => {
         setClothingItems(data);
       })
       .catch(console.error);
-  }, []);
+  }, [isLoggedIn]);
 
   // use effect for checking if user is logged in
   useEffect(() => {

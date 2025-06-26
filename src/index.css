@@ -17,8 +17,6 @@
 @import url(./components/Footer/Footer.css);
 
 @import url(./components/ModalWithForm/ModalWithForm.css);
-@import url(./components/RegisterModal/RegisterModal.css);
-@import url(./components/LoginModal/LoginModal.css);
 @import url(./components/LogOutModal/LogOutModal.css);
 @import url(./components/ItemModal/ItemModal.css);
 @import url(./components/ConfirmDeleteModal/ConfirmDeleteModal.css);
