@@ -28,15 +28,19 @@ const ClothesSection = ({
         </button>
       </div>
       <ul className="clothesSection__list">
-        {userItems.map((item) => (
-          <li key={item._id} className="clothesSection__card">
-            <ItemCard
-              item={item}
-              onCardClick={onCardClick}
-              onCardLike={onCardLike}
-            />
-          </li>
-        ))}
+        {userItems.map((item) => {
+          const isLiked = item.likes.includes(currentUser._id);
+
+          return (
+            <li key={item._id} className="clothesSection__card">
+              <ItemCard
+                item={item}
+                onCardClick={onCardClick}
+                onCardLike={() => onCardLike({ _id: item._id, isLiked })}
+              />
+            </li>
+          );
+        })}
       </ul>
     </div>
   );

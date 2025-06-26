@@ -3,10 +3,12 @@ import { useContext } from "react";
 import WeatherCard from "../WeatherCard/WeatherCard.jsx";
 import ItemCard from "../ItemCard/ItemCard.jsx";
 import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext.jsx";
+import CurrentUserContext from "../../contexts/CurrentUserContext.jsx";
 
 const Main = ({ weatherData, onCardClick, clothingItems, onCardLike }) => {
   // Context
   const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
+  const { currentUser } = useContext(CurrentUserContext);
 
   return (
     <main className="main">
@@ -18,16 +20,18 @@ const Main = ({ weatherData, onCardClick, clothingItems, onCardLike }) => {
         </p>
         <ul className="cards__list">
           {clothingItems
-            .filter((item) => {
-              return item.weather === weatherData.type;
-            })
+            .filter((item) => item.weather === weatherData.type)
             .map((filteredItem) => {
+              const isLiked = filteredItem.likes.includes(currentUser._id);
+
               return (
                 <ItemCard
                   key={filteredItem._id}
                   item={filteredItem}
                   onCardClick={onCardClick}
-                  onCardLike={onCardLike}
+                  onCardLike={() =>
+                    onCardLike({ _id: filteredItem._id, isLiked })
+                  }
                 />
               );
             })}
