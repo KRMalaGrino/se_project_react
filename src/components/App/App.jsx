@@ -154,7 +154,7 @@ function App() {
         localStorage.setItem("jwt", loginData.token);
         setIsLoggedIn(true);
         closeActiveModal();
-        return auth.getUserInfo(loginData.token);
+        return auth.checkTokenValidity(loginData.token);
       })
       .then((user) => {
         setUserData({ _id: user._id, username: user.name, email: user.email });
