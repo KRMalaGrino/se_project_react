@@ -260,6 +260,7 @@ function App() {
             _id: user._id,
             username: user.name,
             email: user.email,
+            avatar: user.avatar,
           });
         })
         .catch((err) => {

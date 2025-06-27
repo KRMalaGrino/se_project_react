@@ -8,7 +8,7 @@ const ItemModal = ({ isOpen, card, onDeleteClick, handleCloseClick }) => {
     onDeleteClick(card);
   };
 
-  const isOwner = name?.owner === currentUser?._id;
+  const isOwner = card?.owner === currentUser?._id;
 
   return (
     <div className={`item-modal ${isOpen && "item-modal_opened"}`}>
@@ -27,18 +27,15 @@ const ItemModal = ({ isOpen, card, onDeleteClick, handleCloseClick }) => {
               Weather: {card?.weather || ""}
             </p>
           </div>
-          {
-            (isOwner,
-            isLoggedIn && (
-              <button
-                className="item-modal__delete-btn"
-                type="button"
-                onClick={handleDeleteClick}
-              >
-                Delete item
-              </button>
-            ))
-          }
+          {isOwner && isLoggedIn && (
+            <button
+              className="item-modal__delete-btn"
+              type="button"
+              onClick={handleDeleteClick}
+            >
+              Delete item
+            </button>
+          )}
         </div>
         <button
           onClick={handleCloseClick}
