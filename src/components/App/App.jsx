@@ -239,11 +239,6 @@ function App() {
 
   // use effect for getting clothing items
   useEffect(() => {
-    if (!isLoggedIn) {
-      setClothingItems([]);
-      return;
-    }
-
     const token = auth.getToken();
     api
       .getClothingItems(token)

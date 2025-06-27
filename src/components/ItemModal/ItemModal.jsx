@@ -2,7 +2,7 @@ import { useContext } from "react";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 
 const ItemModal = ({ isOpen, card, onDeleteClick, handleCloseClick }) => {
-  const currentUser = useContext(CurrentUserContext);
+  const { currentUser, isLoggedIn } = useContext(CurrentUserContext);
 
   const handleDeleteClick = () => {
     onDeleteClick(card);
@@ -27,15 +27,18 @@ const ItemModal = ({ isOpen, card, onDeleteClick, handleCloseClick }) => {
               Weather: {card?.weather || ""}
             </p>
           </div>
-          {isOwner && (
-            <button
-              className="item-modal__delete-btn"
-              type="button"
-              onClick={handleDeleteClick}
-            >
-              Delete item
-            </button>
-          )}
+          {
+            (isOwner,
+            isLoggedIn && (
+              <button
+                className="item-modal__delete-btn"
+                type="button"
+                onClick={handleDeleteClick}
+              >
+                Delete item
+              </button>
+            ))
+          }
         </div>
         <button
           onClick={handleCloseClick}
