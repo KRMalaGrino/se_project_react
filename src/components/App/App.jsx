@@ -157,7 +157,12 @@ function App() {
         return auth.checkTokenValidity(loginData.token);
       })
       .then((user) => {
-        setUserData({ _id: user._id, username: user.name, email: user.email });
+        setUserData({
+          _id: user._id,
+          username: user.name,
+          email: user.email,
+          avatar: user.avatar,
+        });
         navigate("/profile");
       })
       .catch(console.error);
