@@ -13,13 +13,6 @@ const EditProfileModal = ({
   const [name, setName] = useState("");
   const [avatar, setAvatarUrl] = useState("");
 
-  useEffect(() => {
-    if (isOpen && currentUser) {
-      setName(currentUser.username || "");
-      setAvatarUrl(currentUser.avatar || "");
-    }
-  }, [isOpen, currentUser]);
-
   const handleNameChange = (e) => {
     setName(e.target.value);
   };
@@ -30,10 +23,22 @@ const EditProfileModal = ({
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    handleEditProfileSubmit({ name, avatar });
-    setName("");
-    setAvatarUrl("");
+    handleEditProfileSubmit({ name, avatar })
+      .then(() => {
+        setName("");
+        setAvatarUrl("");
+      })
+      .catch((err) => {
+        console.error("Failed to update profile", err);
+      });
   };
+
+  useEffect(() => {
+    if (isOpen && currentUser) {
+      setName(currentUser.username || "");
+      setAvatarUrl(currentUser.avatar || "");
+    }
+  }, [isOpen, currentUser]);
 
   return (
     <ModalWithForm

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import ModalWithForm from "../ModalWithForm/ModalWithForm.jsx";
 
@@ -21,12 +21,22 @@ const LoginModal = ({
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // handle login submission
-    handleLogin({ email, password });
-    // empty the inputs
-    setEmail("");
-    setPassword("");
+    handleLogin({ email, password })
+      .then(() => {
+        setEmail("");
+        setPassword("");
+      })
+      .catch((err) => {
+        console.error("Login attempt failed", err);
+      });
   };
+
+  useEffect(() => {
+    if (isOpen) {
+      setEmail("");
+      setPassword("");
+    }
+  }, [isOpen]);
 
   return (
     <ModalWithForm
