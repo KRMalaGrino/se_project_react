@@ -5,6 +5,7 @@ const ModalWithForm = ({
   handleCloseClick,
   isOpen,
   onSubmit,
+  toggleText,
 }) => {
   return (
     <div className={`modal-with-form ${isOpen && "modal-with-form_opened"}`}>
@@ -16,9 +17,14 @@ const ModalWithForm = ({
           onSubmit={onSubmit}
         >
           {children}
-          <button className="modal-with-form__add-garment-btn">
-            {buttonText}
-          </button>
+          <div className="modal-with-form__button-wrapper">
+            <button className="modal-with-form__add-garment-btn">
+              {buttonText}
+            </button>
+            {toggleText && (
+              <p className="modal-with-form__swap">{toggleText}</p>
+            )}
+          </div>
         </form>
         <button
           onClick={handleCloseClick}

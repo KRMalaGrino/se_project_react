@@ -125,8 +125,15 @@
   margin: 0 8px 0 0;
 }
 
-.modal-with-form__add-garment-btn {
+.modal-with-form__button-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   margin: 24px 0 0;
+}
+
+.modal-with-form__add-garment-btn {
+  margin: 0;
   padding: 8px 16px;
 
   font-size: 15px;
@@ -149,6 +156,19 @@
 
 .modal-with-form__add-garment-btn:hover {
   opacity: 0.6;
+}
+
+.modal-with-form__swap {
+}
+
+.modal-with-form__link-btn {
+  padding: 0 0 0 12px;
+
+  background: none;
+  border: none;
+  color: #00000080;
+
+  cursor: pointer;
 }
 
 .modal-with-form__close-btn {

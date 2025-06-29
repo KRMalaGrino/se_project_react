@@ -1,4 +1,4 @@
-import { handleResponse } from "./api.js";
+import { handleResponse } from "./apiUtils.js";
 
 const getWeather = ({ latitude, longitude }, APIkey) => {
   return fetch(

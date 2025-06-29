@@ -7,6 +7,7 @@ const RegisterModal = ({
   handleRegistration,
   handleCloseClick,
   error,
+  onSwapToLogin,
 }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -47,6 +48,17 @@ const RegisterModal = ({
       handleCloseClick={handleCloseClick}
       isOpen={isOpen}
       onSubmit={handleSubmit}
+      toggleText={
+        <span>
+          <button
+            type="button"
+            className="modal-with-form__link-btn"
+            onClick={onSwapToLogin}
+          >
+            or Log in
+          </button>
+        </span>
+      }
     >
       <label className="modal-with-form__label" htmlFor="email">
         {" "}

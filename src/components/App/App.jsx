@@ -345,11 +345,17 @@ function App() {
                 setRegisterError("");
               }}
               error={registerError}
+              onSwapToLogin={() => {
+                setActiveModal("login");
+              }}
             />
             <LoginModal
               isOpen={activeModal === "login"}
               handleCloseClick={closeActiveModal}
               handleLogin={handleLogin}
+              onSwapToRegister={() => {
+                setActiveModal("register");
+              }}
             />
             <LogOutModal
               isOpen={activeModal === "logout"}
