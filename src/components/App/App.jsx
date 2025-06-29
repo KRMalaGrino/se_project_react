@@ -41,7 +41,11 @@ function App() {
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState(null);
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
-  const [userData, setUserData] = useState({ username: "", email: "" });
+  const [userData, setUserData] = useState({
+    _id: "",
+    username: "",
+    email: "",
+  });
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [registerError, setRegisterError] = useState("");
 
