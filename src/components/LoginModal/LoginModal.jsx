@@ -47,13 +47,13 @@ const LoginModal = ({
         </span>
       }
     >
-      <label className="modal-with-form__label" htmlFor="email">
+      <label className="modal-with-form__label" htmlFor="login-email">
         {" "}
         Email
         <input
           className="modal-with-form__input"
           type="email"
-          id="email"
+          id="login-email"
           name="email"
           placeholder="Email"
           minLength="2"
@@ -66,13 +66,13 @@ const LoginModal = ({
           Please fill out this field.
         </span>
       </label>
-      <label className="modal-with-form__label" htmlFor="password">
+      <label className="modal-with-form__label" htmlFor="login-password">
         {" "}
         Password
         <input
           className="modal-with-form__input"
           type="password"
-          id="password"
+          id="login-password"
           name="password"
           placeholder="Password"
           minLength="8"
