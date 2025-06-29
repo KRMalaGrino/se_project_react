@@ -1,12 +1,7 @@
+import { handleResponse } from "./apiUtils.js";
+
 const baseUrl = "http://localhost:3001";
 const baseHeader = { "Content-Type": "application/json" };
-
-function handleResponse(res) {
-  if (res.ok) {
-    return res.json();
-  }
-  return Promise.reject(`Error: ${res.status}`);
-}
 
 function getClothingItems() {
   return fetch(`${baseUrl}/items`, {
@@ -44,7 +39,6 @@ function removeCardLike(id, token) {
 }
 
 export {
-  handleResponse,
   getClothingItems,
   addNewClothingItem,
   deleteClothingItem,

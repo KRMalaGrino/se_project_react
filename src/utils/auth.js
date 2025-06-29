@@ -1,21 +1,10 @@
+import { handleResponse } from "./apiUtils.js";
+
 const baseUrl = "http://localhost:3001";
 const baseHeader = { "Content-Type": "application/json" };
 
 function getToken() {
   return localStorage.getItem("jwt");
-}
-
-function handleResponse(res) {
-  if (res.ok) {
-    return res.json();
-  }
-  return res.json().then((data) => {
-    const error = {
-      status: res.status,
-      message: data.message || "Something went wrong",
-    };
-    return Promise.reject(error);
-  });
 }
 
 // signup
@@ -59,11 +48,4 @@ function editProfile(token, name, avatar) {
   }).then(handleResponse);
 }
 
-export {
-  getToken,
-  handleResponse,
-  signup,
-  signin,
-  checkTokenValidity,
-  editProfile,
-};
+export { getToken, signup, signin, checkTokenValidity, editProfile };
