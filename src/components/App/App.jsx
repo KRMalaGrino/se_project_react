@@ -138,11 +138,12 @@ function App() {
     auth
       .signup(email, password, name, avatarUrl)
       .then(() => {
-        closeActiveModal();
-        navigate("/signin");
+        // closeActiveModal();
+        // navigate("/signin");
+        return handleLogin({ email, password });
       })
       .catch((err) => {
-        if (err.message === 409) {
+        if (err.status === 409) {
           setRegisterError("User with this email already exists.");
         } else {
           setRegisterError("Registration failed. Please try again.");
