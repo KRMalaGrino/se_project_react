@@ -97,11 +97,11 @@ function App() {
   // Add Clothing Item Modal Submission
   const handleAddItemModalSubmit = ({ name, imageUrl, weather }) => {
     const token = auth.getToken();
-    api
+    return api
       .addNewClothingItem(name, imageUrl, weather, token)
       .then((newItem) => {
         // add new clothing item
-        setClothingItems((prevItems) => [newItem, ...prevItems]);
+        setClothingItems((prevItems) => [newItem.data, ...prevItems]);
         // close active modal
         closeActiveModal();
       })
