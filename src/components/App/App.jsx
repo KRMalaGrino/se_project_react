@@ -250,7 +250,7 @@ function App() {
   // use effect for getting clothing items
   useEffect(() => {
     api
-      .getClothingItems(token)
+      .getClothingItems()
       .then((data) => {
         setClothingItems(data);
       })
