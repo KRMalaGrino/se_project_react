@@ -153,7 +153,7 @@ function App() {
 
   // handle login
   const handleLogin = ({ email, password }) => {
-    auth
+    return auth
       .signin(email, password)
       .then((loginData) => {
         localStorage.setItem("jwt", loginData.token);
@@ -249,7 +249,6 @@ function App() {
 
   // use effect for getting clothing items
   useEffect(() => {
-    const token = auth.getToken();
     api
       .getClothingItems(token)
       .then((data) => {
