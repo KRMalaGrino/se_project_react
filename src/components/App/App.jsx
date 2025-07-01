@@ -135,7 +135,7 @@ function App() {
   // handle register
   const handleRegistration = ({ email, password, name, avatarUrl }) => {
     setRegisterError("");
-    auth
+    return auth
       .signup(email, password, name, avatarUrl)
       .then(() => {
         // closeActiveModal();
@@ -185,7 +185,7 @@ function App() {
   // edit profile
   const handleEditProfileSubmit = ({ name, avatar }) => {
     const token = auth.getToken();
-    auth
+    return auth
       .editProfile(token, name, avatar)
       .then((updatedUser) => {
         setUserData((prevUser) => ({
@@ -201,24 +201,22 @@ function App() {
   // card likes and dislikes
   const handleCardLike = ({ _id, isLiked }) => {
     const token = auth.getToken();
-    // check if this card is not currently liked
-    !isLiked
-      ? api
-          .addCardLike(_id, token)
-          .then((updatedCard) => {
-            setClothingItems((cards) =>
-              cards.map((item) => (item._id === _id ? updatedCard : item))
-            );
-          })
-          .catch((err) => console.log(err))
-      : api
-          .removeCardLike(_id, token)
-          .then((updatedCard) => {
-            setClothingItems((cards) =>
-              cards.map((item) => (item._id === _id ? updatedCard : item))
-            );
-          })
-          .catch((err) => console.log(err));
+
+    const apiCall = !isLiked
+      ? api.addCardLike(_id, token)
+      : api.removeCardLike(_id, token);
+
+    return apiCall
+      .then((updatedCard) => {
+        setClothingItems((cards) =>
+          cards.map((item) => (item._id === _id ? updatedCard : item))
+        );
+        return updatedCard;
+      })
+      .catch((err) => {
+        console.error("Failed to update card like:", err);
+        throw err;
+      });
   };
 
   // Escape key close modal
