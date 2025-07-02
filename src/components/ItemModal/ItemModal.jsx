@@ -4,6 +4,13 @@ import CurrentUserContext from "../../contexts/CurrentUserContext";
 const ItemModal = ({ isOpen, card, onDeleteClick, handleCloseClick }) => {
   const { currentUser, isLoggedIn } = useContext(CurrentUserContext);
 
+  // Click handler for clicking outside the modal to close it
+  const handleOverlayClick = (e) => {
+    if (e.target === e.currentTarget) {
+      handleCloseClick();
+    }
+  };
+
   const handleDeleteClick = () => {
     onDeleteClick(card);
   };
@@ -11,7 +18,10 @@ const ItemModal = ({ isOpen, card, onDeleteClick, handleCloseClick }) => {
   const isOwner = card?.owner === currentUser?._id;
 
   return (
-    <div className={`item-modal ${isOpen && "item-modal_opened"}`}>
+    <div
+      className={`item-modal ${isOpen && "item-modal_opened"}`}
+      onClick={handleOverlayClick}
+    >
       <div className="item-modal__container">
         {card?.imageUrl && (
           <img
