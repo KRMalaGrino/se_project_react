@@ -122,10 +122,16 @@ const coordinates = {
 // API Key
 const APIkey = "8296d06fc295121a34eff3fa523cc028";
 
+const baseUrl =
+  process.env.NODE_ENV === "production"
+    ? "https://api.KRMalaGrino.theoceanforest.com"
+    : "http://localhost:3001";
+
 export {
   weatherOptions,
   defaultWeatherOptions,
   defaultClothingItems,
   coordinates,
   APIkey,
+  baseUrl,
 };

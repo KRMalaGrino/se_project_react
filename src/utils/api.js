@@ -1,9 +1,6 @@
 import { handleResponse } from "./apiUtils.js";
+import { baseUrl } from "../utils/constants.js";
 
-const baseUrl =
-  process.env.NODE_ENV === "production"
-    ? "https://api.KRMalaGrino.theoceanforest.com"
-    : "http://localhost:3001";
 const baseHeader = { "Content-Type": "application/json" };
 
 function getClothingItems() {
