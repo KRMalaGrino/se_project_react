@@ -8,7 +8,9 @@ This was my first react project . Most of the project consists of react jsx alon
 
 **Backend link**
 
-(git clone) https://github.com/KRMalaGrino/se_project_express
+https://krmalagrino.theoceanforest.com/
+https://www.krmalagrino.theoceanforest.com/
+https://api.krmalagrino.theoceanforest.com/
 
 **Figma link**
 
