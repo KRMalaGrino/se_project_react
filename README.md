@@ -6,12 +6,6 @@ This website / application for the computer or phone recommends the user what to
 
 This was my first react project . Most of the project consists of react jsx along with java script , css and html of course . According to the figma design we developed the layouts, typographies and other important details . VSCode was the coding application used .
 
-**Backend link**
-
-https://krmalagrino.theoceanforest.com/
-https://www.krmalagrino.theoceanforest.com/
-https://api.krmalagrino.theoceanforest.com/
-
 **Figma link**
 
 - [https://www.figma.com/file/BBNm2bC3lj8QQMHlnqRsga/Sprint-3-Project-%E2%80%94-Spots?type=design&node-id=2%3A60&mode=design&t=afgNFybdorZO6cQo-1](https://www.figma.com/design/dQLJwEKasIdspciJAJrCaf/Sprint-11_-WTWR?node-id=459-703&t=IrX7kVYsESCeKIdm-0)
@@ -24,8 +18,8 @@ https://api.krmalagrino.theoceanforest.com/
 
 ---
 
-## Deployment
+**Deployment links**
 
-This project is deployed on GitHub Pages:
-
-- https://krmalagrino.github.io/se_project_react/
+https://krmalagrino.theoceanforest.com/
+https://www.krmalagrino.theoceanforest.com/
+https://api.krmalagrino.theoceanforest.com/
